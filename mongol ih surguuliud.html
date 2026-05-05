@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Дэлхийн Их Сургуулиуд — Монгол Оюутнуудад</title>
+<meta name="description" content="Монгол 10-р ангийн төгсөгчдөд зориулсан дэлхийн их сургуулиудын мэдээлэл — төлбөр, тэтгэлэг, давуу тал">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #1D9E75;
+    --green-light: #E1F5EE;
+    --green-dark: #0F6E56;
+    --amber: #BA7517;
+    --amber-light: #FAEEDA;
+    --blue: #185FA5;
+    --blue-light: #E6F1FB;
+    --text: #1a1a1a;
+    --text-2: #555;
+    --text-3: #888;
+    --border: rgba(0,0,0,0.09);
+    --border-2: rgba(0,0,0,0.16);
+    --bg: #faf9f7;
+    --bg-2: #f2f0ec;
+    --white: #fff;
+    --radius: 14px;
+    --radius-sm: 8px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(250,249,247,0.88);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 60px;
+  }
+  .nav-logo { font-family: 'DM Serif Display', serif; font-size: 1.25rem; color: var(--green-dark); text-decoration: none; }
+  .nav-links { display: flex; gap: 1.5rem; }
+  .nav-links a { font-size: 0.875rem; color: var(--text-2); text-decoration: none; transition: color .2s; }
+  .nav-links a:hover { color: var(--green); }
+
+  /* HERO */
+  .hero {
+    padding: 5rem 2rem 4rem;
+    max-width: 900px; margin: 0 auto;
+    text-align: center;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: var(--green-light); color: var(--green-dark);
+    font-size: 0.8rem; font-weight: 500; letter-spacing: .04em;
+    padding: 5px 14px; border-radius: 20px; margin-bottom: 1.5rem;
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    line-height: 1.15; color: var(--text);
+    margin-bottom: 1rem;
+  }
+  .hero h1 em { font-style: italic; color: var(--green); }
+  .hero p { font-size: 1.05rem; color: var(--text-2); max-width: 580px; margin: 0 auto 2rem; }
+  .hero-stats {
+    display: flex; justify-content: center; gap: 3rem;
+    padding: 1.5rem 2rem;
+    background: var(--white); border-radius: var(--radius);
+    border: 1px solid var(--border);
+    max-width: 500px; margin: 0 auto;
+  }
+  .hero-stat { text-align: center; }
+  .hero-stat-num { font-family: 'DM Serif Display', serif; font-size: 2rem; color: var(--green-dark); }
+  .hero-stat-lbl { font-size: 0.8rem; color: var(--text-3); margin-top: 2px; }
+
+  /* SEARCH + FILTER */
+  .controls {
+    max-width: 1100px; margin: 0 auto;
+    padding: 2rem 2rem 1rem;
+  }
+  .search-wrap {
+    position: relative; margin-bottom: 1rem;
+  }
+  .search-wrap svg { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); opacity: .4; }
+  .search-wrap input {
+    width: 100%; padding: 12px 16px 12px 42px;
+    border-radius: var(--radius); border: 1px solid var(--border-2);
+    background: var(--white); font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem; color: var(--text);
+    transition: border-color .2s, box-shadow .2s;
+  }
+  .search-wrap input:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 3px rgba(29,158,117,.12); }
+  .filters { display: flex; gap: 8px; flex-wrap: wrap; }
+  .filter-btn {
+    padding: 7px 16px; border-radius: 20px;
+    border: 1px solid var(--border-2);
+    background: var(--white); color: var(--text-2);
+    font-family: 'DM Sans', sans-serif; font-size: 0.85rem;
+    cursor: pointer; transition: all .15s;
+  }
+  .filter-btn:hover { border-color: var(--green); color: var(--green); }
+  .filter-btn.active { background: var(--green); border-color: var(--green); color: #fff; }
+
+  /* GRID */
+  .grid-wrap { max-width: 1100px; margin: 0 auto; padding: 1.5rem 2rem 4rem; }
+  .result-count { font-size: 0.85rem; color: var(--text-3); margin-bottom: 1rem; }
+  .uni-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
+
+  /* CARD */
+  .card {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: var(--radius); overflow: hidden;
+    transition: box-shadow .2s, border-color .2s, transform .15s;
+    cursor: pointer;
+  }
+  .card:hover { box-shadow: 0 4px 24px rgba(0,0,0,.08); border-color: var(--border-2); transform: translateY(-2px); }
+  .card.open { border-color: var(--green); }
+  .card-head { padding: 1.1rem 1.25rem; }
+  .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 10px; }
+  .card-name { font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: var(--text); line-height: 1.25; }
+  .card-country { font-size: 0.8rem; color: var(--text-3); margin-top: 3px; }
+  .rank-pill {
+    font-size: 0.75rem; font-weight: 600; white-space: nowrap;
+    padding: 4px 10px; border-radius: 20px;
+    background: var(--green-light); color: var(--green-dark);
+    flex-shrink: 0;
+  }
+  .tags { display: flex; gap: 6px; flex-wrap: wrap; }
+  .tag {
+    font-size: 0.72rem; padding: 3px 9px; border-radius: 10px;
+    border: 1px solid var(--border);
+  }
+  .tag-cs { background: var(--blue-light); color: var(--blue); border-color: #B5D4F4; }
+  .tag-schol { background: var(--green-light); color: var(--green-dark); border-color: #9FE1CB; }
+  .tag-mongol { background: var(--amber-light); color: var(--amber); border-color: #FAC775; }
+
+  /* CARD BODY */
+  .card-body { display: none; border-top: 1px solid var(--border); }
+  .card.open .card-body { display: block; }
+  .card-body-inner { padding: 1rem 1.25rem; }
+  .detail { display: flex; justify-content: space-between; padding: 7px 0; border-bottom: 1px solid var(--border); font-size: 0.85rem; gap: 10px; }
+  .detail:last-of-type { border-bottom: none; }
+  .detail-lbl { color: var(--text-3); flex-shrink: 0; }
+  .detail-val { color: var(--text); font-weight: 500; text-align: right; }
+  .note-box {
+    margin-top: 10px; padding: 10px 12px;
+    background: var(--bg); border-radius: var(--radius-sm);
+    font-size: 0.82rem; color: var(--text-2); line-height: 1.6;
+    border-left: 3px solid var(--green);
+  }
+  .chevron {
+    display: inline-block; margin-left: 6px;
+    transition: transform .2s; font-size: 0.75rem; color: var(--text-3);
+  }
+  .card.open .chevron { transform: rotate(180deg); }
+
+  /* EMPTY */
+  .empty { text-align: center; padding: 4rem 2rem; color: var(--text-3); }
+  .empty p { font-size: 0.95rem; margin-top: 8px; }
+
+  /* FOOTER */
+  footer {
+    background: var(--text); color: rgba(255,255,255,.5);
+    text-align: center; padding: 2rem;
+    font-size: 0.82rem;
+  }
+  footer span { color: var(--green); }
+
+  @media (max-width: 640px) {
+    nav { padding: 0 1rem; }
+    .nav-links { display: none; }
+    .hero { padding: 3rem 1rem 2.5rem; }
+    .hero-stats { gap: 1.5rem; padding: 1rem; }
+    .controls, .grid-wrap { padding-left: 1rem; padding-right: 1rem; }
+    .uni-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">Их Сургуулиуд</a>
+  <div class="nav-links">
+    <a href="#unis">Бүх сургуулиуд</a>
+    <a href="#footer">Тухай</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge">Монгол 10-р ангийн төгсөгчдөд зориулсан</div>
+  <h1>Дэлхийн <em>их сургуулиуд</em><br>нэг дор</h1>
+  <p>Төлбөр, тэтгэлэг, CS хөтөлбөр, Монгол оюутны мэдээлэл — бүгдийг нь нэг газраас олоорой.</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="hero-stat-num" id="stat-total">30</div><div class="hero-stat-lbl">Их сургууль</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">18</div><div class="hero-stat-lbl">Тэтгэлэгтэй</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">12</div><div class="hero-stat-lbl">Улс орон</div></div>
+  </div>
+</section>
+
+<div class="controls" id="unis">
+  <div class="search-wrap">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input type="text" id="search" placeholder="Их сургуулийн нэр эсвэл улс оронд хайх..." oninput="render()">
+  </div>
+  <div class="filters">
+    <button class="filter-btn active" onclick="setFilter('all',this)">Бүгд</button>
+    <button class="filter-btn" onclick="setFilter('europe',this)">Европ</button>
+    <button class="filter-btn" onclick="setFilter('asia',this)">Ази</button>
+    <button class="filter-btn" onclick="setFilter('us',this)">АНУ / Канад</button>
+    <button class="filter-btn" onclick="setFilter('mongol',this)">Монгол оюутан</button>
+    <button class="filter-btn" onclick="setFilter('scholarship',this)">Тэтгэлэгтэй</button>
+    <button class="filter-btn" onclick="setFilter('cs',this)">CS хөтөлбөр</button>
+  </div>
+</div>
+
+<div class="grid-wrap">
+  <div class="result-count" id="result-count"></div>
+  <div class="uni-grid" id="grid"></div>
+  <div class="empty" id="empty" style="display:none">
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <p>Хайлтад тохирох их сургууль олдсонгүй.</p>
+  </div>
+</div>
+
+<footer id="footer">
+  <p>Монгол оюутнуудад зориулсан боловсролын мэдээлэл &mdash; <span>2025</span></p>
+  <p style="margin-top:6px;">Мэдээлэл лавлах зориулалттай. Элсэхээсээ өмнө их сургуулийн албан ёсны сайтаас шалгана уу.</p>
+</footer>
+
+<script>
+const unis = [
+  { name:"MIT", country:"АНУ, Бостон", region:"us", rank:"QS #1", tuition:"$57,986/жил", scholarship:"Need-based бүрэн тэтгэлэг боломжтой", mongol:"Монгол оюутан суралцдаг", cs:true, hasSchol:true, hasMongol:true, apply:"Common App + MIT Application", deadline:"11-р сарын 1 (EA), 1-р сарын 1 (RD)", lang:"IELTS 7.0+ / TOEFL 100+", notes:"Дэлхийн тэргүүний STEM их сургууль. Орлого бага гэр бүлийн хүүхдүүдэд бүрэн тэтгэлэг олгодог." },
+  { name:"Stanford University", country:"АНУ, Калифорни", region:"us", rank:"QS #5", tuition:"$56,169/жил", scholarship:"Need-based, дундаж $60k/жил тэтгэлэг", mongol:"Монгол оюутан суралцдаг", cs:true, hasSchol:true, hasMongol:true, apply:"Common App", deadline:"11-р сарын 1 (REA), 1-р сарын 2 (RD)", lang:"IELTS 7.0+ / TOEFL 100+", notes:"Silicon Valley-н зүрх. CS, AI, стартап соёл хамгийн хүчтэй." },
+  { name:"ETH Zürich", country:"Швейцарь, Цюрих", region:"europe", rank:"QS #7", tuition:"~CHF 730/хагас жил (~$800)", scholarship:"Excellence Scholarship байдаг", mongol:"Монгол оюутан суралцдаг", cs:true, hasSchol:true, hasMongol:true, apply:"ETH шууд портал", deadline:"12-р сарын 15", lang:"IELTS 7.0+ / TOEFL 95+", notes:"Европт хамгийн хямд, хамгийн чанартай технологийн их сургуулиудын нэг." },
+  { name:"University of Edinburgh", country:"Их Британи, Шотланд", region:"europe", rank:"QS #27", tuition:"£21,000–£28,600/жил", scholarship:"Global Scholarships, Chevening", mongol:"Монгол оюутан суралцдаг", cs:true, hasSchol:true, hasMongol:true, apply:"UCAS портал", deadline:"1-р сарын 31", lang:"IELTS 6.5–7.0", notes:"CS хөтөлбөр дэлхийд өндөр үнэлгээтэй. Шотланд дахь амьдрах зардал Лондонгоос хямд." },
+  { name:"TU Delft", country:"Нидерланд, Делфт", region:"europe", rank:"QS #54", tuition:"€18,000–€20,000/жил (EU-аас бус)", scholarship:"Holland Scholarship, Excellence Scholarship", mongol:"", cs:true, hasSchol:true, hasMongol:false, apply:"TU Delft шууд", deadline:"4-р сарын 1", lang:"IELTS 6.5+", notes:"Техникийн их сургуулиудын дундаа Европт тэргүүлдэг. Англи хэл дээр олон хөтөлбөр." },
+  { name:"KTH Royal Institute of Technology", country:"Швед, Стокгольм", region:"europe", rank:"QS #97", tuition:"€13,000–€15,000/жил", scholarship:"Swedish Institute Scholarship, KTH Scholarship", mongol:"Монгол оюутан суралцдаг", cs:true, hasSchol:true, hasMongol:true, apply:"University Admissions Sweden", deadline:"1-р сарын 15", lang:"IELTS 6.5+", notes:"Скандинавын тэргүүний технологийн их сургууль. Тэтгэлгийн боломж өргөн." },
+  { name:"University of Toronto", country:"Канад, Торонто", region:"us", rank:"QS #25", tuition:"CAD $45,000–$58,000/жил", scholarship:"Lester B. Pearson Scholarship (бүрэн тэтгэлэг)", mongol:"Монгол оюутан суралцдаг", cs:true, hasSchol:true, hasMongol:true, apply:"OUAC портал", deadline:"1-р сарын 15", lang:"IELTS 6.5–7.0", notes:"Канадын хамгийн өндөр зэрэглэлтэй их сургууль. Pearson тэтгэлэг маш өрсөлдөөнтэй ч бүрэн тэтгэлэг." },
+  { name:"University of Melbourne", country:"Австрали, Мельбурн", region:"asia", rank:"QS #33", tuition:"AUD $40,000–$47,000/жил", scholarship:"Melbourne International Undergraduate Scholarship", mongol:"Монгол оюутан суралцдаг", cs:true, hasSchol:true, hasMongol:true, apply:"UAC / шууд", deadline:"9-р сар (эрт), 12-р сар (хожуу)", lang:"IELTS 6.5+", notes:"Австралийн тэргүүний их сургууль. Монгол оюутны нийгэмлэг байдаг." },
+  { name:"National University of Singapore", country:"Сингапур", region:"asia", rank:"QS #8", tuition:"SGD $17,550–$29,400/жил", scholarship:"ASEAN Scholarship, NUS Scholarship", mongol:"", cs:true, hasSchol:true, hasMongol:false, apply:"NUS шууд", deadline:"2-р сарын 20", lang:"IELTS 6.5+", notes:"Азийн хамгийн өндөр зэрэглэлтэй их сургуулиудын нэг. Амьдрах зардал өндөр." },
+  { name:"Seoul National University", country:"Солонгос, Сеул", region:"asia", rank:"QS #41", tuition:"₩4,000,000–₩5,000,000/хагас жил (~$3,800)", scholarship:"KGSP — бүрэн тэтгэлэг", mongol:"Монгол оюутан байдаг", cs:true, hasSchol:true, hasMongol:true, apply:"GKS / KGSP портал", deadline:"2–3-р сар", lang:"IELTS 5.5+ эсвэл TOPIK", notes:"KGSP тэтгэлэг — Монгол оюутнуудад маш ээлтэй. Солонгос хэл мэдлэг давуу тал болно." },
+  { name:"Waseda University", country:"Япон, Токио", region:"asia", rank:"QS #200-250", tuition:"¥1,500,000–¥2,000,000/жил (~$13,000)", scholarship:"MEXT тэтгэлэг (Японы засгийн газар) — бүрэн тэтгэлэг", mongol:"Монгол оюутан байдаг", cs:true, hasSchol:true, hasMongol:true, apply:"Васэда шууд / MEXT", deadline:"4–6-р сар (MEXT)", lang:"IELTS 6.0+ (англи хөтөлбөрт)", notes:"MEXT тэтгэлэг — нийт сургалтын төлбөр + амьдрах мөнгө. Монгол элчин сайдын яамаар дамжуулан өргөдлөө өгнө." },
+  { name:"Peking University", country:"Хятад, Бээжин", region:"asia", rank:"QS #17", tuition:"¥26,000–¥32,000/жил (~$4,500)", scholarship:"CSC тэтгэлэг — бүрэн тэтгэлэг", mongol:"Монгол оюутан маш олон", cs:true, hasSchol:true, hasMongol:true, apply:"CSC Online / Шууд", deadline:"4-р сарын 30", lang:"HSK 4+ эсвэл IELTS 6.0+", notes:"Монгол оюутнуудад хамгийн ойр, хамгийн олон тэтгэлэгтэй. Хятад хэл давуу тал болно." },
+  { name:"Tsinghua University", country:"Хятад, Бээжин", region:"asia", rank:"QS #20", tuition:"¥26,000–¥45,000/жил (~$6,300)", scholarship:"CSC тэтгэлэг — бүрэн тэтгэлэг", mongol:"Монгол оюутан суралцдаг", cs:true, hasSchol:true, hasMongol:true, apply:"CSC Online", deadline:"4-р сарын 30", lang:"HSK 5+ эсвэл IELTS 6.0+", notes:"Хятадын MIT гэж нэрлэгддэг. CS, инженерийн хөтөлбөр дэлхийд тэргүүнд." },
+  { name:"Technical University of Munich", country:"Герман, Мюнхен", region:"europe", rank:"QS #37", tuition:"€258/хагас жил (admin fee)", scholarship:"Deutschlandstipendium, DAAD", mongol:"Монгол оюутан суралцдаг", cs:true, hasSchol:true, hasMongol:true, apply:"TUM шууд", deadline:"5-р сарын 31 (Winter)", lang:"IELTS 6.5+ (англи) / Герман B2+", notes:"Европт хамгийн хямдхан, маш чанартай. CS хөтөлбөр байдаг." },
+  { name:"KAIST", country:"Солонгос, Тэжон", region:"asia", rank:"QS #65", tuition:"Ихэнх оюутанд үнэгүй + сарын тэтгэлэг", scholarship:"KAIST бүрэн тэтгэлэг", mongol:"Монгол оюутан суралцдаг", cs:true, hasSchol:true, hasMongol:true, apply:"KAIST шууд", deadline:"9-р сарын 30 (Spring), 4-р сарын 30 (Fall)", lang:"IELTS 6.5+ / TOEFL 85+", notes:"Солонгосын MIT. CS, инженерт дэлхийд тэргүүнд. Англи хэлэнд суурилсан бакалаврын хөтөлбөр байдаг." },
+  { name:"Politecnico di Milano", country:"Итали, Милан", region:"europe", rank:"QS #139", tuition:"€3,000–€4,000/жил", scholarship:"Erdis Lombardia DSU тэтгэлэг", mongol:"Монгол оюутан суралцдаг", cs:true, hasSchol:true, hasMongol:true, apply:"Polimi.it", deadline:"4–7-р сар", lang:"IELTS 6.5+", notes:"Италийн тэргүүний техникийн их сургууль. CS, инженерийн чиглэлд маш сайн." },
+  { name:"Sapienza University of Rome", country:"Итали, Ром", region:"europe", rank:"QS #171-180", tuition:"€1,000–€2,500/жил", scholarship:"DSU тэтгэлэг — хоол, орон байр, мөнгөн тэтгэлэг", mongol:"Монгол оюутан суралцдаг", cs:true, hasSchol:true, hasMongol:true, apply:"Universitaly.it", deadline:"7–9-р сар", lang:"IELTS 6.0+", notes:"Европт хамгийн хямдхан. DSU тэтгэлэг Монгол оюутнуудад боломжтой. Дэлхийн хамгийн эртний их сургуулиудын нэг." },
+  { name:"University of Bologna", country:"Итали, Болонь", region:"europe", rank:"QS #154", tuition:"€1,000–€3,000/жил", scholarship:"ER.GO тэтгэлэг", mongol:"Монгол оюутан суралцдаг", cs:true, hasSchol:true, hasMongol:true, apply:"Universitaly.it", deadline:"7–9-р сар", lang:"IELTS 6.0+", notes:"Дэлхийн хамгийн эртний их сургууль (1088 он). DSU/ER.GO тэтгэлгийн систем сайн хөгжсөн." },
+  { name:"University of Manchester", country:"Их Британи, Манчестер", region:"europe", rank:"QS #34", tuition:"£25,000–£30,000/жил", scholarship:"Global Futures Scholarship", mongol:"Монгол оюутан байдаг", cs:true, hasSchol:true, hasMongol:false, apply:"UCAS", deadline:"1-р сарын 31", lang:"IELTS 6.5+", notes:"CS чиглэлд дэлхийд тэргүүнд. Манчестерийн амьдрах зардал Лондонгоос хямд." },
+  { name:"Charles University", country:"Чех, Прага", region:"europe", rank:"QS #201-250", tuition:"€2,000–€5,000/жил", scholarship:"Czech Government Scholarship", mongol:"Монгол оюутан байдаг", cs:true, hasSchol:true, hasMongol:false, apply:"Шууд", deadline:"2–3-р сар", lang:"IELTS 6.0+", notes:"Европын хамгийн эртний их сургуулиудын нэг. Хямд амьдрах зардал, өндөр боловсролын чанар." },
+  { name:"Maastricht University", country:"Нидерланд, Маастрихт", region:"europe", rank:"QS #286", tuition:"€9,900/жил", scholarship:"High Potential Scholarship", mongol:"", cs:true, hasSchol:true, hasMongol:false, apply:"Шууд", deadline:"4-р сарын 1", lang:"IELTS 6.5+", notes:"Problem-Based Learning арга зүйдээ алдартай. Нидерландын хамгийн олон улсын оюутантай их сургуулиудын нэг." },
+  { name:"Yonsei University", country:"Солонгос, Сеул", region:"asia", rank:"QS #79", tuition:"₩6,000,000–₩8,000,000/жил (~$6,000)", scholarship:"KGSP, Yonsei International Scholarship", mongol:"Монгол оюутан байдаг", cs:true, hasSchol:true, hasMongol:true, apply:"KGSP / шууд", deadline:"2–3-р сар", lang:"IELTS 6.0+", notes:"Солонгосын SKY их сургуулиудын нэг. Монгол оюутнуудад KGSP тэтгэлэг боломжтой." },
+  { name:"Lomonosov Moscow State University", country:"Орос, Москва", region:"europe", rank:"QS #87", tuition:"₽300,000–₽500,000/жил", scholarship:"Оросын засгийн газрын тэтгэлэг", mongol:"Монгол оюутан маш олон", cs:true, hasSchol:true, hasMongol:true, apply:"Россотрудничество / шууд", deadline:"3–4-р сар", lang:"Орос хэл (C1+) / IELTS 6.0+", notes:"Монгол оюутнуудад маш танил. Тэтгэлгийн квот байдаг. Одоогийн геополитик нөхцлийг анхаарна уу." },
+  { name:"Innopolis University", country:"Орос, Иннополис", region:"europe", rank:"CS-д тусгайлсан", tuition:"₽0 — бүрэн үнэгүй + сарын тэтгэлэг", scholarship:"Бүрэн тэтгэлэг", mongol:"Монгол оюутан байдаг", cs:true, hasSchol:true, hasMongol:true, apply:"Innopolis шууд", deadline:"4–6-р сар", lang:"IELTS 6.0+ / Орос хэл", notes:"100% CS болон IT чиглэлтэй тусгай хот. Геополитик нөхцлийг анхаарах хэрэгтэй." },
+  { name:"Hebrew University of Jerusalem", country:"Израиль, Иерусалим", region:"europe", rank:"QS #151-200", tuition:"$11,000–$15,000/жил", scholarship:"Rothberg International Scholarship", mongol:"", cs:true, hasSchol:false, hasMongol:false, apply:"Шууд", deadline:"4-р сар", lang:"IELTS 6.0+", notes:"CS, AI судалгааны чиглэлд дэлхийд өндөр нэртэй." },
+  { name:"Czech Technical University", country:"Чех, Прага", region:"europe", rank:"QS #551-600", tuition:"€2,000–€3,500/жил", scholarship:"Czech Gov. Scholarship, CEEPUS", mongol:"", cs:true, hasSchol:true, hasMongol:false, apply:"Шууд", deadline:"2–3-р сар", lang:"IELTS 6.0+", notes:"Мэдээлэл технологи, инженерийн чиглэлд Чехийн тэргүүний их сургууль." },
+  { name:"University of Helsinki", country:"Финланд, Хельсинки", region:"europe", rank:"QS #119", tuition:"€13,000–€18,000/жил", scholarship:"University of Helsinki Scholarship", mongol:"", cs:true, hasSchol:true, hasMongol:false, apply:"Studyinfo.fi", deadline:"1-р сарын 8", lang:"IELTS 6.5+", notes:"Хойд Европын чанартай боловсрол. CS хөтөлбөр дэлхийд тэргүүнд." },
+  { name:"Sungkyunkwan University", country:"Солонгос, Сеул", region:"asia", rank:"QS #101-150", tuition:"₩7,000,000–₩9,000,000/жил", scholarship:"Samsung-н дэмжлэгтэй, KGSP боломжтой", mongol:"", cs:true, hasSchol:true, hasMongol:false, apply:"Шууд / KGSP", deadline:"2–3-р сар", lang:"IELTS 5.5+ / TOPIK", notes:"Samsung корпорацийн дэмжлэгтэй их сургууль. Технологийн чиглэлд маш хүчтэй." },
+  { name:"University of Warsaw", country:"Польш, Варшав", region:"europe", rank:"QS #301-350", tuition:"€2,000–€4,000/жил", scholarship:"Erasmus+, Polish Government Scholarship", mongol:"", cs:true, hasSchol:true, hasMongol:false, apply:"IRK портал", deadline:"5–7-р сар", lang:"IELTS 6.0+", notes:"Европт хамгийн хямдхан чанартай боловсрол." },
+  { name:"University of Auckland", country:"Шинэ Зеланд", region:"asia", rank:"QS #68", tuition:"NZD $37,000–$44,000/жил", scholarship:"International Excellence Award", mongol:"", cs:true, hasSchol:true, hasMongol:false, apply:"Шууд", deadline:"10-р сар (March intake)", lang:"IELTS 6.5+", notes:"Шинэ Зеландын тэргүүний их сургууль. Аюулгүй, амар тайван орчин." }
+];
+
+let activeFilter = 'all';
+
+function setFilter(f, btn) {
+  activeFilter = f;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  render();
+}
+
+function render() {
+  const q = document.getElementById('search').value.toLowerCase();
+  const grid = document.getElementById('grid');
+  const empty = document.getElementById('empty');
+  const countEl = document.getElementById('result-count');
+  const statEl = document.getElementById('stat-total');
+
+  grid.innerHTML = '';
+  let count = 0;
+
+  unis.forEach((u, i) => {
+    const matchF =
+      activeFilter === 'all' ||
+      (activeFilter === 'europe' && u.region === 'europe') ||
+      (activeFilter === 'asia' && u.region === 'asia') ||
+      (activeFilter === 'us' && u.region === 'us') ||
+      (activeFilter === 'mongol' && u.hasMongol) ||
+      (activeFilter === 'scholarship' && u.hasSchol) ||
+      (activeFilter === 'cs' && u.cs);
+    const matchQ = !q || u.name.toLowerCase().includes(q) || u.country.toLowerCase().includes(q);
+
+    if (!matchF || !matchQ) return;
+    count++;
+
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+      <div class="card-head">
+        <div class="card-top">
+          <div>
+            <div class="card-name">${u.name} <span class="chevron">▾</span></div>
+            <div class="card-country">${u.country}</div>
+          </div>
+          <span class="rank-pill">${u.rank}</span>
+        </div>
+        <div class="tags">
+          ${u.cs ? '<span class="tag tag-cs">CS хөтөлбөр</span>' : ''}
+          ${u.hasSchol ? '<span class="tag tag-schol">Тэтгэлэгтэй</span>' : ''}
+          ${u.hasMongol ? '<span class="tag tag-mongol">Монгол оюутан</span>' : ''}
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-body-inner">
+          <div class="detail"><span class="detail-lbl">Сургалтын төлбөр</span><span class="detail-val">${u.tuition}</span></div>
+          <div class="detail"><span class="detail-lbl">Тэтгэлэг</span><span class="detail-val">${u.scholarship}</span></div>
+          <div class="detail"><span class="detail-lbl">Хэл шалгалт</span><span class="detail-val">${u.lang}</span></div>
+          <div class="detail"><span class="detail-lbl">Элсэлтийн хугацаа</span><span class="detail-val">${u.deadline}</span></div>
+          <div class="detail"><span class="detail-lbl">Өргөдлийн систем</span><span class="detail-val">${u.apply}</span></div>
+          <div class="note-box">${u.notes}</div>
+        </div>
+      </div>
+    `;
+    card.querySelector('.card-head').addEventListener('click', () => card.classList.toggle('open'));
+    grid.appendChild(card);
+  });
+
+  countEl.textContent = count + ' их сургууль харуулж байна';
+  statEl.textContent = count;
+  empty.style.display = count === 0 ? 'block' : 'none';
+  grid.style.display = count === 0 ? 'none' : 'grid';
+}
+
+render();
+</script>
+</body>
+</html>
