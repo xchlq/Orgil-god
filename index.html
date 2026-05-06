@@ -4,203 +4,139 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Дэлхийн Их Сургуулиуд — Монгол Оюутнуудад</title>
-<meta name="description" content="Монгол 10-р ангийн төгсөгчдөд зориулсан дэлхийн их сургуулиудын мэдээлэл — төлбөр, тэтгэлэг, давуу тал">
+<meta name="description" content="Их дээд сургууль сонирхогчдод зориулсан дэлхийн их сургуулиудын мэдээлэл">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --green: #1D9E75;
-    --green-light: #E1F5EE;
-    --green-dark: #0F6E56;
-    --amber: #BA7517;
-    --amber-light: #FAEEDA;
-    --blue: #185FA5;
-    --blue-light: #E6F1FB;
-    --text: #1a1a1a;
-    --text-2: #555;
-    --text-3: #888;
-    --border: rgba(0,0,0,0.09);
-    --border-2: rgba(0,0,0,0.16);
-    --bg: #faf9f7;
-    --bg-2: #f2f0ec;
-    --white: #fff;
-    --radius: 14px;
-    --radius-sm: 8px;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+:root{--green:#1D9E75;--green-light:#E1F5EE;--green-dark:#0F6E56;--amber:#BA7517;--amber-light:#FAEEDA;--blue:#185FA5;--blue-light:#E6F1FB;--text:#1a1a1a;--text-2:#555;--text-3:#888;--border:rgba(0,0,0,0.09);--border-2:rgba(0,0,0,0.16);--bg:#faf9f7;--white:#fff;--radius:14px;--radius-sm:8px;}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
 
-  /* NAV */
-  nav {
-    position: sticky; top: 0; z-index: 100;
-    background: rgba(250,249,247,0.88);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-    padding: 0 2rem;
-    display: flex; align-items: center; justify-content: space-between;
-    height: 60px;
-  }
-  .nav-logo { font-family: 'DM Serif Display', serif; font-size: 1.25rem; color: var(--green-dark); text-decoration: none; }
-  .nav-links { display: flex; gap: 1.5rem; }
-  .nav-links a { font-size: 0.875rem; color: var(--text-2); text-decoration: none; transition: color .2s; }
-  .nav-links a:hover { color: var(--green); }
+nav{position:sticky;top:0;z-index:200;background:rgba(250,249,247,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:1.25rem;color:var(--green-dark);cursor:pointer;}
+.nav-links{display:flex;gap:1.5rem;}
+.nav-links a{font-size:0.875rem;color:var(--text-2);text-decoration:none;transition:color .2s;cursor:pointer;}
+.nav-links a:hover{color:var(--green);}
 
-  /* HERO */
-  .hero {
-    padding: 5rem 2rem 4rem;
-    max-width: 900px; margin: 0 auto;
-    text-align: center;
-  }
-  .hero-badge {
-    display: inline-block;
-    background: var(--green-light); color: var(--green-dark);
-    font-size: 0.8rem; font-weight: 500; letter-spacing: .04em;
-    padding: 5px 14px; border-radius: 20px; margin-bottom: 1.5rem;
-  }
-  .hero h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(2.2rem, 5vw, 3.6rem);
-    line-height: 1.15; color: var(--text);
-    margin-bottom: 1rem;
-  }
-  .hero h1 em { font-style: italic; color: var(--green); }
-  .hero p { font-size: 1.05rem; color: var(--text-2); max-width: 580px; margin: 0 auto 2rem; }
-  .hero-stats {
-    display: flex; justify-content: center; gap: 3rem;
-    padding: 1.5rem 2rem;
-    background: var(--white); border-radius: var(--radius);
-    border: 1px solid var(--border);
-    max-width: 500px; margin: 0 auto;
-  }
-  .hero-stat { text-align: center; }
-  .hero-stat-num { font-family: 'DM Serif Display', serif; font-size: 2rem; color: var(--green-dark); }
-  .hero-stat-lbl { font-size: 0.8rem; color: var(--text-3); margin-top: 2px; }
+.hero{padding:5rem 2rem 4rem;max-width:900px;margin:0 auto;text-align:center;}
+.hero-badge{display:inline-block;background:var(--green-light);color:var(--green-dark);font-size:0.8rem;font-weight:500;padding:5px 14px;border-radius:20px;margin-bottom:1.5rem;}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.15;margin-bottom:1rem;}
+.hero h1 em{font-style:italic;color:var(--green);}
+.hero p{font-size:1.05rem;color:var(--text-2);max-width:580px;margin:0 auto 2rem;}
+.hero-stats{display:flex;justify-content:center;gap:3rem;padding:1.5rem 2rem;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);max-width:500px;margin:0 auto;}
+.hero-stat-num{font-family:'DM Serif Display',serif;font-size:2rem;color:var(--green-dark);}
+.hero-stat-lbl{font-size:0.8rem;color:var(--text-3);margin-top:2px;}
 
-  /* SEARCH + FILTER */
-  .controls {
-    max-width: 1100px; margin: 0 auto;
-    padding: 2rem 2rem 1rem;
-  }
-  .search-wrap {
-    position: relative; margin-bottom: 1rem;
-  }
-  .search-wrap svg { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); opacity: .4; }
-  .search-wrap input {
-    width: 100%; padding: 12px 16px 12px 42px;
-    border-radius: var(--radius); border: 1px solid var(--border-2);
-    background: var(--white); font-family: 'DM Sans', sans-serif;
-    font-size: 0.95rem; color: var(--text);
-    transition: border-color .2s, box-shadow .2s;
-  }
-  .search-wrap input:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 3px rgba(29,158,117,.12); }
-  .filters { display: flex; gap: 8px; flex-wrap: wrap; }
-  .filter-btn {
-    padding: 7px 16px; border-radius: 20px;
-    border: 1px solid var(--border-2);
-    background: var(--white); color: var(--text-2);
-    font-family: 'DM Sans', sans-serif; font-size: 0.85rem;
-    cursor: pointer; transition: all .15s;
-  }
-  .filter-btn:hover { border-color: var(--green); color: var(--green); }
-  .filter-btn.active { background: var(--green); border-color: var(--green); color: #fff; }
+.controls{max-width:1100px;margin:0 auto;padding:2rem 2rem 1rem;}
+.search-wrap{position:relative;margin-bottom:1rem;}
+.search-wrap svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);opacity:.4;}
+.search-wrap input{width:100%;padding:12px 16px 12px 42px;border-radius:var(--radius);border:1px solid var(--border-2);background:var(--white);font-family:'DM Sans',sans-serif;font-size:0.95rem;color:var(--text);transition:border-color .2s,box-shadow .2s;}
+.search-wrap input:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(29,158,117,.12);}
+.filters{display:flex;gap:8px;flex-wrap:wrap;}
+.filter-btn{padding:7px 16px;border-radius:20px;border:1px solid var(--border-2);background:var(--white);color:var(--text-2);font-family:'DM Sans',sans-serif;font-size:0.85rem;cursor:pointer;transition:all .15s;}
+.filter-btn:hover{border-color:var(--green);color:var(--green);}
+.filter-btn.active{background:var(--green);border-color:var(--green);color:#fff;}
 
-  /* GRID */
-  .grid-wrap { max-width: 1100px; margin: 0 auto; padding: 1.5rem 2rem 4rem; }
-  .result-count { font-size: 0.85rem; color: var(--text-3); margin-bottom: 1rem; }
-  .uni-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
+.grid-wrap{max-width:1100px;margin:0 auto;padding:1.5rem 2rem 4rem;}
+.result-count{font-size:0.85rem;color:var(--text-3);margin-bottom:1rem;}
+.uni-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;}
 
-  /* CARD */
-  .card {
-    background: var(--white); border: 1px solid var(--border);
-    border-radius: var(--radius); overflow: hidden;
-    transition: box-shadow .2s, border-color .2s, transform .15s;
-    cursor: pointer;
-  }
-  .card:hover { box-shadow: 0 4px 24px rgba(0,0,0,.08); border-color: var(--border-2); transform: translateY(-2px); }
-  .card.open { border-color: var(--green); }
-  .card-head { padding: 1.1rem 1.25rem; }
-  .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 10px; }
-  .card-name { font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: var(--text); line-height: 1.25; }
-  .card-country { font-size: 0.8rem; color: var(--text-3); margin-top: 3px; }
-  .rank-pill {
-    font-size: 0.75rem; font-weight: 600; white-space: nowrap;
-    padding: 4px 10px; border-radius: 20px;
-    background: var(--green-light); color: var(--green-dark);
-    flex-shrink: 0;
-  }
-  .tags { display: flex; gap: 6px; flex-wrap: wrap; }
-  .tag {
-    font-size: 0.72rem; padding: 3px 9px; border-radius: 10px;
-    border: 1px solid var(--border);
-  }
-  .tag-cs { background: var(--blue-light); color: var(--blue); border-color: #B5D4F4; }
-  .tag-schol { background: var(--green-light); color: var(--green-dark); border-color: #9FE1CB; }
-  .tag-mongol { background: var(--amber-light); color: var(--amber); border-color: #FAC775; }
+.card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:box-shadow .2s,border-color .2s,transform .15s;cursor:pointer;display:flex;flex-direction:column;}
+.card:hover{box-shadow:0 6px 28px rgba(0,0,0,.1);border-color:var(--green);transform:translateY(-2px);}
+.card-head{padding:1.1rem 1.25rem;flex:1;}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:10px;}
+.card-name{font-family:'DM Serif Display',serif;font-size:1.05rem;color:var(--text);line-height:1.25;}
+.card-country{font-size:0.78rem;color:var(--text-3);margin-top:3px;}
+.rank-pill{font-size:0.72rem;font-weight:600;white-space:nowrap;padding:3px 9px;border-radius:20px;background:var(--green-light);color:var(--green-dark);flex-shrink:0;}
+.tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px;}
+.tag{font-size:0.7rem;padding:2px 8px;border-radius:10px;border:1px solid var(--border);}
+.tag-cs{background:var(--blue-light);color:var(--blue);border-color:#B5D4F4;}
+.tag-schol{background:var(--green-light);color:var(--green-dark);border-color:#9FE1CB;}
+.tag-mongol{background:var(--amber-light);color:var(--amber);border-color:#FAC775;}
+.card-footer{display:flex;align-items:center;justify-content:space-between;padding:10px 1.25rem;border-top:1px solid var(--border);background:var(--bg);}
+.card-tuition{font-size:0.78rem;color:var(--text-2);}
+.card-btn{font-size:0.78rem;color:var(--green);font-weight:500;}
 
-  /* CARD BODY */
-  .card-body { display: none; border-top: 1px solid var(--border); }
-  .card.open .card-body { display: block; }
-  .card-body-inner { padding: 1rem 1.25rem; }
-  .detail { display: flex; justify-content: space-between; padding: 7px 0; border-bottom: 1px solid var(--border); font-size: 0.85rem; gap: 10px; }
-  .detail:last-of-type { border-bottom: none; }
-  .detail-lbl { color: var(--text-3); flex-shrink: 0; }
-  .detail-val { color: var(--text); font-weight: 500; text-align: right; }
-  .note-box {
-    margin-top: 10px; padding: 10px 12px;
-    background: var(--bg); border-radius: var(--radius-sm);
-    font-size: 0.82rem; color: var(--text-2); line-height: 1.6;
-    border-left: 3px solid var(--green);
-  }
-  .chevron {
-    display: inline-block; margin-left: 6px;
-    transition: transform .2s; font-size: 0.75rem; color: var(--text-3);
-  }
-  .card.open .chevron { transform: rotate(180deg); }
+/* DETAIL */
+#detail-view{display:none;}
+.detail-wrap{max-width:900px;margin:0 auto;padding:2rem 2rem 5rem;}
+.back-btn{display:inline-flex;align-items:center;gap:6px;font-size:0.88rem;color:var(--text-2);cursor:pointer;margin-bottom:2rem;padding:8px 14px;border:1px solid var(--border-2);border-radius:var(--radius-sm);transition:all .2s;background:var(--white);}
+.back-btn:hover{color:var(--green);border-color:var(--green);}
+.detail-hero{margin-bottom:2rem;}
+.detail-rank{display:inline-block;background:var(--green-light);color:var(--green-dark);font-size:0.85rem;font-weight:600;padding:5px 14px;border-radius:20px;margin-bottom:1rem;}
+.detail-name{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.15;margin-bottom:0.4rem;}
+.detail-country{font-size:1rem;color:var(--text-2);margin-bottom:1rem;}
+.detail-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1.5rem;}
+.detail-tags .tag{font-size:0.82rem;padding:5px 12px;}
+.action-btns{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:2rem;}
+.official-link{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#fff;padding:10px 20px;border-radius:var(--radius-sm);font-size:0.9rem;font-weight:500;text-decoration:none;transition:background .2s;}
+.official-link:hover{background:var(--green-dark);}
+.map-link{display:inline-flex;align-items:center;gap:8px;background:var(--white);color:var(--text);padding:10px 20px;border-radius:var(--radius-sm);font-size:0.9rem;font-weight:500;text-decoration:none;transition:all .2s;border:1px solid var(--border-2);}
+.map-link:hover{border-color:var(--green);color:var(--green);}
 
-  /* EMPTY */
-  .empty { text-align: center; padding: 4rem 2rem; color: var(--text-3); }
-  .empty p { font-size: 0.95rem; margin-top: 8px; }
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:2rem;}
+.info-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-sm);padding:1rem 1.25rem;}
+.info-card-lbl{font-size:0.72rem;color:var(--text-3);margin-bottom:4px;text-transform:uppercase;letter-spacing:.05em;}
+.info-card-val{font-size:0.92rem;color:var(--text);font-weight:500;line-height:1.4;}
 
-  /* FOOTER */
-  footer {
-    background: var(--text); color: rgba(255,255,255,.5);
-    text-align: center; padding: 2rem;
-    font-size: 0.82rem;
-  }
-  footer span { color: var(--green); }
+.campus-section{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;margin-bottom:2rem;}
+.campus-title{font-family:'DM Serif Display',serif;font-size:1.2rem;margin-bottom:1rem;display:flex;align-items:center;gap:8px;}
+.campus-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.campus-item{background:var(--bg);border-radius:var(--radius-sm);padding:10px 12px;}
+.campus-item-lbl{font-size:0.72rem;color:var(--text-3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px;}
+.campus-item-val{font-size:0.88rem;color:var(--text);font-weight:500;}
 
-  @media (max-width: 640px) {
-    nav { padding: 0 1rem; }
-    .nav-links { display: none; }
-    .hero { padding: 3rem 1rem 2.5rem; }
-    .hero-stats { gap: 1.5rem; padding: 1rem; }
-    .controls, .grid-wrap { padding-left: 1rem; padding-right: 1rem; }
-    .uni-grid { grid-template-columns: 1fr; }
-  }
+.section-title{font-family:'DM Serif Display',serif;font-size:1.3rem;margin-bottom:1rem;margin-top:2rem;}
+.desc-text{font-size:0.95rem;color:var(--text-2);line-height:1.85;}
+.fun-facts{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-top:1rem;}
+.fun-fact{display:flex;gap:14px;align-items:flex-start;padding:14px 16px;border-bottom:1px solid var(--border);}
+.fun-fact:last-child{border-bottom:none;}
+.fun-fact-text{font-size:0.88rem;color:var(--text-2);line-height:1.6;}
+
+.alumni-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:1rem;}
+.alumni-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 12px;}
+.alumni-name{font-size:0.85rem;font-weight:600;color:var(--text);}
+.alumni-desc{font-size:0.75rem;color:var(--text-3);margin-top:2px;}
+
+.map-embed{width:100%;height:300px;border-radius:var(--radius);border:1px solid var(--border);margin-top:1rem;}
+
+.empty{text-align:center;padding:4rem 2rem;color:var(--text-3);}
+footer{background:var(--text);color:rgba(255,255,255,.5);text-align:center;padding:2rem;font-size:0.82rem;}
+footer span{color:var(--green);}
+
+@media(max-width:640px){
+  nav{padding:0 1rem;}.nav-links{display:none;}
+  .hero{padding:3rem 1rem 2.5rem;}.hero-stats{gap:1.5rem;padding:1rem;}
+  .controls,.grid-wrap,.detail-wrap{padding-left:1rem;padding-right:1rem;}
+  .uni-grid{grid-template-columns:1fr;}
+  .info-grid,.campus-grid{grid-template-columns:1fr;}
+  .action-btns{flex-direction:column;}
+}
 </style>
 </head>
 <body>
 
 <nav>
-  <a class="nav-logo" href="#">Их Сургуулиуд</a>
+  <span class="nav-logo" onclick="showList()">Их Сургуулиуд</span>
   <div class="nav-links">
-    <a href="#unis">Бүх сургуулиуд</a>
+    <a onclick="showList()">Бүх сургуулиуд</a>
     <a href="#footer">Тухай</a>
   </div>
 </nav>
 
+<!-- LIST VIEW -->
+<div id="list-view">
 <section class="hero">
   <div class="hero-badge">Их дээд сургууль сонирхогчдод зориулсан</div>
   <h1>Дэлхийн <em>их сургуулиуд</em><br>нэг дор</h1>
-  <p>Төлбөр, тэтгэлэг, CS хөтөлбөр, Монгол оюутны мэдээлэл — бүгдийг нь нэг газраас олоорой.</p>
+  <p>Төлбөр, тэтгэлэг, кампус, CS хөтөлбөр — бүгдийг нь нэг газраас олоорой.</p>
   <div class="hero-stats">
-    <div class="hero-stat"><div class="hero-stat-num" id="stat-total">30</div><div class="hero-stat-lbl">Их сургууль</div></div>
-    <div class="hero-stat"><div class="hero-stat-num">18</div><div class="hero-stat-lbl">Тэтгэлэгтэй</div></div>
-    <div class="hero-stat"><div class="hero-stat-num">12</div><div class="hero-stat-lbl">Улс орон</div></div>
+    <div class="hero-stat"><div class="hero-stat-num" id="stat-total">55</div><div class="hero-stat-lbl">Их сургууль</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">20+</div><div class="hero-stat-lbl">Улс орон</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">35+</div><div class="hero-stat-lbl">Тэтгэлэгтэй</div></div>
   </div>
 </section>
-
 <div class="controls" id="unis">
   <div class="search-wrap">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
@@ -216,54 +152,562 @@
     <button class="filter-btn" onclick="setFilter('cs',this)">CS хөтөлбөр</button>
   </div>
 </div>
-
 <div class="grid-wrap">
   <div class="result-count" id="result-count"></div>
   <div class="uni-grid" id="grid"></div>
-  <div class="empty" id="empty" style="display:none">
-    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-    <p>Хайлтад тохирох их сургууль олдсонгүй.</p>
+  <div class="empty" id="empty" style="display:none"><p>Хайлтад тохирох их сургууль олдсонгүй.</p></div>
+</div>
+</div>
+
+<!-- DETAIL VIEW -->
+<div id="detail-view">
+<div class="detail-wrap">
+  <div class="back-btn" onclick="showList()">← Жагсаалт руу буцах</div>
+  <div class="detail-hero">
+    <div class="detail-rank" id="d-rank"></div>
+    <div class="detail-name" id="d-name"></div>
+    <div class="detail-country" id="d-country"></div>
+    <div class="detail-tags" id="d-tags"></div>
+    <div class="action-btns">
+      <a id="d-link" class="official-link" href="#" target="_blank">🌐 Албан ёсны вэбсайт</a>
+      <a id="d-map" class="map-link" href="#" target="_blank">📍 Google Maps дээр харах</a>
+    </div>
   </div>
+  <div class="info-grid" id="d-info"></div>
+  <div class="campus-section" id="d-campus-section">
+    <div class="campus-title">🏛️ Кампус</div>
+    <div class="campus-grid" id="d-campus"></div>
+  </div>
+  <div class="section-title">Их сургуулийн тухай</div>
+  <div class="desc-text" id="d-desc"></div>
+  <div class="section-title">⭐ Сонирхолтой баримтууд</div>
+  <div class="fun-facts" id="d-facts"></div>
+  <div class="section-title">🎓 Алдарт төгсөгчид</div>
+  <div class="alumni-grid" id="d-alumni"></div>
+</div>
 </div>
 
 <footer id="footer">
   <p>Монгол оюутнуудад зориулсан боловсролын мэдээлэл &mdash; <span>2026</span></p>
   <p style="margin-top:6px;">Мэдээлэл лавлах зориулалттай. Элсэхээсээ өмнө их сургуулийн албан ёсны сайтаас шалгана уу.</p>
-  <p style="margin-top:10px; color: rgba(255,255,255,0.3);">Хийсэн: <span>Orgil</span> 🤍</p>
+  <p style="margin-top:10px;color:rgba(255,255,255,0.3);">Хийсэн: <span>Orgil</span> 🤍</p>
 </footer>
 
 <script>
 const unis = [
-  { name:"MIT", country:"АНУ, Бостон", region:"us", rank:"QS #1", tuition:"$57,986/жил", scholarship:"Need-based бүрэн тэтгэлэг боломжтой", mongol:"Монгол оюутан суралцдаг", cs:true, hasSchol:true, hasMongol:true, apply:"Common App + MIT Application", deadline:"11-р сарын 1 (EA), 1-р сарын 1 (RD)", lang:"IELTS 7.0+ / TOEFL 100+", notes:"Дэлхийн тэргүүний STEM их сургууль. Орлого бага гэр бүлийн хүүхдүүдэд бүрэн тэтгэлэг олгодог." },
-  { name:"Stanford University", country:"АНУ, Калифорни", region:"us", rank:"QS #5", tuition:"$56,169/жил", scholarship:"Need-based, дундаж $60k/жил тэтгэлэг", mongol:"Монгол оюутан суралцдаг", cs:true, hasSchol:true, hasMongol:true, apply:"Common App", deadline:"11-р сарын 1 (REA), 1-р сарын 2 (RD)", lang:"IELTS 7.0+ / TOEFL 100+", notes:"Silicon Valley-н зүрх. CS, AI, стартап соёл хамгийн хүчтэй." },
-  { name:"ETH Zürich", country:"Швейцарь, Цюрих", region:"europe", rank:"QS #7", tuition:"~CHF 730/хагас жил (~$800)", scholarship:"Excellence Scholarship байдаг", mongol:"Монгол оюутан суралцдаг", cs:true, hasSchol:true, hasMongol:true, apply:"ETH шууд портал", deadline:"12-р сарын 15", lang:"IELTS 7.0+ / TOEFL 95+", notes:"Европт хамгийн хямд, хамгийн чанартай технологийн их сургуулиудын нэг." },
-  { name:"University of Edinburgh", country:"Их Британи, Шотланд", region:"europe", rank:"QS #27", tuition:"£21,000–£28,600/жил", scholarship:"Global Scholarships, Chevening", mongol:"Монгол оюутан суралцдаг", cs:true, hasSchol:true, hasMongol:true, apply:"UCAS портал", deadline:"1-р сарын 31", lang:"IELTS 6.5–7.0", notes:"CS хөтөлбөр дэлхийд өндөр үнэлгээтэй. Шотланд дахь амьдрах зардал Лондонгоос хямд." },
-  { name:"TU Delft", country:"Нидерланд, Делфт", region:"europe", rank:"QS #54", tuition:"€18,000–€20,000/жил (EU-аас бус)", scholarship:"Holland Scholarship, Excellence Scholarship", mongol:"", cs:true, hasSchol:true, hasMongol:false, apply:"TU Delft шууд", deadline:"4-р сарын 1", lang:"IELTS 6.5+", notes:"Техникийн их сургуулиудын дундаа Европт тэргүүлдэг. Англи хэл дээр олон хөтөлбөр." },
-  { name:"KTH Royal Institute of Technology", country:"Швед, Стокгольм", region:"europe", rank:"QS #97", tuition:"€13,000–€15,000/жил", scholarship:"Swedish Institute Scholarship, KTH Scholarship", mongol:"Монгол оюутан суралцдаг", cs:true, hasSchol:true, hasMongol:true, apply:"University Admissions Sweden", deadline:"1-р сарын 15", lang:"IELTS 6.5+", notes:"Скандинавын тэргүүний технологийн их сургууль. Тэтгэлгийн боломж өргөн." },
-  { name:"University of Toronto", country:"Канад, Торонто", region:"us", rank:"QS #25", tuition:"CAD $45,000–$58,000/жил", scholarship:"Lester B. Pearson Scholarship (бүрэн тэтгэлэг)", mongol:"Монгол оюутан суралцдаг", cs:true, hasSchol:true, hasMongol:true, apply:"OUAC портал", deadline:"1-р сарын 15", lang:"IELTS 6.5–7.0", notes:"Канадын хамгийн өндөр зэрэглэлтэй их сургууль. Pearson тэтгэлэг маш өрсөлдөөнтэй ч бүрэн тэтгэлэг." },
-  { name:"University of Melbourne", country:"Австрали, Мельбурн", region:"asia", rank:"QS #33", tuition:"AUD $40,000–$47,000/жил", scholarship:"Melbourne International Undergraduate Scholarship", mongol:"Монгол оюутан суралцдаг", cs:true, hasSchol:true, hasMongol:true, apply:"UAC / шууд", deadline:"9-р сар (эрт), 12-р сар (хожуу)", lang:"IELTS 6.5+", notes:"Австралийн тэргүүний их сургууль. Монгол оюутны нийгэмлэг байдаг." },
-  { name:"National University of Singapore", country:"Сингапур", region:"asia", rank:"QS #8", tuition:"SGD $17,550–$29,400/жил", scholarship:"ASEAN Scholarship, NUS Scholarship", mongol:"", cs:true, hasSchol:true, hasMongol:false, apply:"NUS шууд", deadline:"2-р сарын 20", lang:"IELTS 6.5+", notes:"Азийн хамгийн өндөр зэрэглэлтэй их сургуулиудын нэг. Амьдрах зардал өндөр." },
-  { name:"Seoul National University", country:"Солонгос, Сеул", region:"asia", rank:"QS #41", tuition:"₩4,000,000–₩5,000,000/хагас жил (~$3,800)", scholarship:"KGSP — бүрэн тэтгэлэг", mongol:"Монгол оюутан байдаг", cs:true, hasSchol:true, hasMongol:true, apply:"GKS / KGSP портал", deadline:"2–3-р сар", lang:"IELTS 5.5+ эсвэл TOPIK", notes:"KGSP тэтгэлэг — Монгол оюутнуудад маш ээлтэй. Солонгос хэл мэдлэг давуу тал болно." },
-  { name:"Waseda University", country:"Япон, Токио", region:"asia", rank:"QS #200-250", tuition:"¥1,500,000–¥2,000,000/жил (~$13,000)", scholarship:"MEXT тэтгэлэг (Японы засгийн газар) — бүрэн тэтгэлэг", mongol:"Монгол оюутан байдаг", cs:true, hasSchol:true, hasMongol:true, apply:"Васэда шууд / MEXT", deadline:"4–6-р сар (MEXT)", lang:"IELTS 6.0+ (англи хөтөлбөрт)", notes:"MEXT тэтгэлэг — нийт сургалтын төлбөр + амьдрах мөнгө. Монгол элчин сайдын яамаар дамжуулан өргөдлөө өгнө." },
-  { name:"Peking University", country:"Хятад, Бээжин", region:"asia", rank:"QS #17", tuition:"¥26,000–¥32,000/жил (~$4,500)", scholarship:"CSC тэтгэлэг — бүрэн тэтгэлэг", mongol:"Монгол оюутан маш олон", cs:true, hasSchol:true, hasMongol:true, apply:"CSC Online / Шууд", deadline:"4-р сарын 30", lang:"HSK 4+ эсвэл IELTS 6.0+", notes:"Монгол оюутнуудад хамгийн ойр, хамгийн олон тэтгэлэгтэй. Хятад хэл давуу тал болно." },
-  { name:"Tsinghua University", country:"Хятад, Бээжин", region:"asia", rank:"QS #20", tuition:"¥26,000–¥45,000/жил (~$6,300)", scholarship:"CSC тэтгэлэг — бүрэн тэтгэлэг", mongol:"Монгол оюутан суралцдаг", cs:true, hasSchol:true, hasMongol:true, apply:"CSC Online", deadline:"4-р сарын 30", lang:"HSK 5+ эсвэл IELTS 6.0+", notes:"Хятадын MIT гэж нэрлэгддэг. CS, инженерийн хөтөлбөр дэлхийд тэргүүнд." },
-  { name:"Technical University of Munich", country:"Герман, Мюнхен", region:"europe", rank:"QS #37", tuition:"€258/хагас жил (admin fee)", scholarship:"Deutschlandstipendium, DAAD", mongol:"Монгол оюутан суралцдаг", cs:true, hasSchol:true, hasMongol:true, apply:"TUM шууд", deadline:"5-р сарын 31 (Winter)", lang:"IELTS 6.5+ (англи) / Герман B2+", notes:"Европт хамгийн хямдхан, маш чанартай. CS хөтөлбөр байдаг." },
-  { name:"KAIST", country:"Солонгос, Тэжон", region:"asia", rank:"QS #65", tuition:"Ихэнх оюутанд үнэгүй + сарын тэтгэлэг", scholarship:"KAIST бүрэн тэтгэлэг", mongol:"Монгол оюутан суралцдаг", cs:true, hasSchol:true, hasMongol:true, apply:"KAIST шууд", deadline:"9-р сарын 30 (Spring), 4-р сарын 30 (Fall)", lang:"IELTS 6.5+ / TOEFL 85+", notes:"Солонгосын MIT. CS, инженерт дэлхийд тэргүүнд. Англи хэлэнд суурилсан бакалаврын хөтөлбөр байдаг." },
-  { name:"Politecnico di Milano", country:"Итали, Милан", region:"europe", rank:"QS #139", tuition:"€3,000–€4,000/жил", scholarship:"Erdis Lombardia DSU тэтгэлэг", mongol:"Монгол оюутан суралцдаг", cs:true, hasSchol:true, hasMongol:true, apply:"Polimi.it", deadline:"4–7-р сар", lang:"IELTS 6.5+", notes:"Италийн тэргүүний техникийн их сургууль. CS, инженерийн чиглэлд маш сайн." },
-  { name:"Sapienza University of Rome", country:"Итали, Ром", region:"europe", rank:"QS #171-180", tuition:"€1,000–€2,500/жил", scholarship:"DSU тэтгэлэг — хоол, орон байр, мөнгөн тэтгэлэг", mongol:"Монгол оюутан суралцдаг", cs:true, hasSchol:true, hasMongol:true, apply:"Universitaly.it", deadline:"7–9-р сар", lang:"IELTS 6.0+", notes:"Европт хамгийн хямдхан. DSU тэтгэлэг Монгол оюутнуудад боломжтой. Дэлхийн хамгийн эртний их сургуулиудын нэг." },
-  { name:"University of Bologna", country:"Итали, Болонь", region:"europe", rank:"QS #154", tuition:"€1,000–€3,000/жил", scholarship:"ER.GO тэтгэлэг", mongol:"Монгол оюутан суралцдаг", cs:true, hasSchol:true, hasMongol:true, apply:"Universitaly.it", deadline:"7–9-р сар", lang:"IELTS 6.0+", notes:"Дэлхийн хамгийн эртний их сургууль (1088 он). DSU/ER.GO тэтгэлгийн систем сайн хөгжсөн." },
-  { name:"University of Manchester", country:"Их Британи, Манчестер", region:"europe", rank:"QS #34", tuition:"£25,000–£30,000/жил", scholarship:"Global Futures Scholarship", mongol:"Монгол оюутан байдаг", cs:true, hasSchol:true, hasMongol:false, apply:"UCAS", deadline:"1-р сарын 31", lang:"IELTS 6.5+", notes:"CS чиглэлд дэлхийд тэргүүнд. Манчестерийн амьдрах зардал Лондонгоос хямд." },
-  { name:"Charles University", country:"Чех, Прага", region:"europe", rank:"QS #201-250", tuition:"€2,000–€5,000/жил", scholarship:"Czech Government Scholarship", mongol:"Монгол оюутан байдаг", cs:true, hasSchol:true, hasMongol:false, apply:"Шууд", deadline:"2–3-р сар", lang:"IELTS 6.0+", notes:"Европын хамгийн эртний их сургуулиудын нэг. Хямд амьдрах зардал, өндөр боловсролын чанар." },
-  { name:"Maastricht University", country:"Нидерланд, Маастрихт", region:"europe", rank:"QS #286", tuition:"€9,900/жил", scholarship:"High Potential Scholarship", mongol:"", cs:true, hasSchol:true, hasMongol:false, apply:"Шууд", deadline:"4-р сарын 1", lang:"IELTS 6.5+", notes:"Problem-Based Learning арга зүйдээ алдартай. Нидерландын хамгийн олон улсын оюутантай их сургуулиудын нэг." },
-  { name:"Yonsei University", country:"Солонгос, Сеул", region:"asia", rank:"QS #79", tuition:"₩6,000,000–₩8,000,000/жил (~$6,000)", scholarship:"KGSP, Yonsei International Scholarship", mongol:"Монгол оюутан байдаг", cs:true, hasSchol:true, hasMongol:true, apply:"KGSP / шууд", deadline:"2–3-р сар", lang:"IELTS 6.0+", notes:"Солонгосын SKY их сургуулиудын нэг. Монгол оюутнуудад KGSP тэтгэлэг боломжтой." },
-  { name:"Lomonosov Moscow State University", country:"Орос, Москва", region:"europe", rank:"QS #87", tuition:"₽300,000–₽500,000/жил", scholarship:"Оросын засгийн газрын тэтгэлэг", mongol:"Монгол оюутан маш олон", cs:true, hasSchol:true, hasMongol:true, apply:"Россотрудничество / шууд", deadline:"3–4-р сар", lang:"Орос хэл (C1+) / IELTS 6.0+", notes:"Монгол оюутнуудад маш танил. Тэтгэлгийн квот байдаг. Одоогийн геополитик нөхцлийг анхаарна уу." },
-  { name:"Innopolis University", country:"Орос, Иннополис", region:"europe", rank:"CS-д тусгайлсан", tuition:"₽0 — бүрэн үнэгүй + сарын тэтгэлэг", scholarship:"Бүрэн тэтгэлэг", mongol:"Монгол оюутан байдаг", cs:true, hasSchol:true, hasMongol:true, apply:"Innopolis шууд", deadline:"4–6-р сар", lang:"IELTS 6.0+ / Орос хэл", notes:"100% CS болон IT чиглэлтэй тусгай хот. Геополитик нөхцлийг анхаарах хэрэгтэй." },
-  { name:"Hebrew University of Jerusalem", country:"Израиль, Иерусалим", region:"europe", rank:"QS #151-200", tuition:"$11,000–$15,000/жил", scholarship:"Rothberg International Scholarship", mongol:"", cs:true, hasSchol:false, hasMongol:false, apply:"Шууд", deadline:"4-р сар", lang:"IELTS 6.0+", notes:"CS, AI судалгааны чиглэлд дэлхийд өндөр нэртэй." },
-  { name:"Czech Technical University", country:"Чех, Прага", region:"europe", rank:"QS #551-600", tuition:"€2,000–€3,500/жил", scholarship:"Czech Gov. Scholarship, CEEPUS", mongol:"", cs:true, hasSchol:true, hasMongol:false, apply:"Шууд", deadline:"2–3-р сар", lang:"IELTS 6.0+", notes:"Мэдээлэл технологи, инженерийн чиглэлд Чехийн тэргүүний их сургууль." },
-  { name:"University of Helsinki", country:"Финланд, Хельсинки", region:"europe", rank:"QS #119", tuition:"€13,000–€18,000/жил", scholarship:"University of Helsinki Scholarship", mongol:"", cs:true, hasSchol:true, hasMongol:false, apply:"Studyinfo.fi", deadline:"1-р сарын 8", lang:"IELTS 6.5+", notes:"Хойд Европын чанартай боловсрол. CS хөтөлбөр дэлхийд тэргүүнд." },
-  { name:"Sungkyunkwan University", country:"Солонгос, Сеул", region:"asia", rank:"QS #101-150", tuition:"₩7,000,000–₩9,000,000/жил", scholarship:"Samsung-н дэмжлэгтэй, KGSP боломжтой", mongol:"", cs:true, hasSchol:true, hasMongol:false, apply:"Шууд / KGSP", deadline:"2–3-р сар", lang:"IELTS 5.5+ / TOPIK", notes:"Samsung корпорацийн дэмжлэгтэй их сургууль. Технологийн чиглэлд маш хүчтэй." },
-  { name:"University of Warsaw", country:"Польш, Варшав", region:"europe", rank:"QS #301-350", tuition:"€2,000–€4,000/жил", scholarship:"Erasmus+, Polish Government Scholarship", mongol:"", cs:true, hasSchol:true, hasMongol:false, apply:"IRK портал", deadline:"5–7-р сар", lang:"IELTS 6.0+", notes:"Европт хамгийн хямдхан чанартай боловсрол." },
-  { name:"University of Auckland", country:"Шинэ Зеланд", region:"asia", rank:"QS #68", tuition:"NZD $37,000–$44,000/жил", scholarship:"International Excellence Award", mongol:"", cs:true, hasSchol:true, hasMongol:false, apply:"Шууд", deadline:"10-р сар (March intake)", lang:"IELTS 6.5+", notes:"Шинэ Зеландын тэргүүний их сургууль. Аюулгүй, амар тайван орчин." }
+  {
+    name:"University of Oxford",country:"Их Британи, Оксфорд",region:"europe",rank:"QS #3",
+    tuition:"£28,950–£39,010/жил",scholarship:"Rhodes Scholarship, Clarendon Fund",hasSchol:true,hasMongol:false,cs:true,
+    apply:"UCAS портал",deadline:"10-р сарын 15",lang:"IELTS 7.0–7.5+",
+    website:"https://www.ox.ac.uk",
+    mapLink:"https://maps.google.com/?q=University+of+Oxford",
+    campus:{size:"70 гаруй дотуур байртай колледж",location:"Оксфорд хотын төв",founded:"1096 он",students:"24,000+ оюутан",style:"Дунд зуун готик архитектур",notable:"Бодлиан номын сан, Sheldonian Theatre, Radcliffe Camera"},
+    desc:"Оксфорд бол 1096 онд байгуулагдсан дэлхийн хамгийн нэр хүндтэй их сургуулиудын нэг. 44 бие даасан колледжоос бүрдэх бөгөөд Tutorial буюу нэг багш нэг оюутантай ажиллах тогтолцоогоороо дэлхийд алдартай. Оксфорд хотын гудамжаар алхахад л их сургуулийн байшингуудтай тааралдана.",
+    facts:["🏛️ 928 жилийн түүхтэй — Европын хамгийн эртний их сургуулиудын нэг","🎓 27 улсын тэргүүн, 50+ Нобелийн шагналт төгсөгчтэй","📚 Бодлиан номын сан 12 сая+ ном хадгалдаг — Их Британид 2-рт","🧙 Harry Potter-н зарим дүрс зурагт Оксфордод буулгасан","🌍 Оюутнуудын 45% нь 150+ улсаас ирсэн гадаадын иргэд","🚴 Оксфорд хот нь дугуйгаар зорчдогоороо алдартай"],
+    alumni:[{name:"Stephen Hawking",desc:"Физикч"},{name:"Tony Blair",desc:"Британийн ерөнхий сайд"},{name:"Bill Clinton",desc:"АНУ ерөнхийлөгч"},{name:"Oscar Wilde",desc:"Зохиолч"},{name:"J.R.R. Tolkien",desc:"Толкиен"}]
+  },
+  {
+    name:"University of Cambridge",country:"Их Британи, Кэмбриж",region:"europe",rank:"QS #2",
+    tuition:"£24,507–£35,517/жил",scholarship:"Cambridge Trust, Gates Cambridge Scholarship",hasSchol:true,hasMongol:false,cs:true,
+    apply:"UCAS портал",deadline:"10-р сарын 15",lang:"IELTS 7.5+",
+    website:"https://www.cam.ac.uk",
+    mapLink:"https://maps.google.com/?q=University+of+Cambridge",
+    campus:{size:"31 колледжтой",location:"Кэмбриж хотын төв",founded:"1209 он",students:"23,000+ оюутан",style:"Готик болон неоготик архитектур",notable:"King's College Chapel, The Backs, Fitzwilliam Museum"},
+    desc:"Кэмбриж нь 1209 онд байгуулагдсан дэлхийн тэргүүний их сургуулиудын нэг. 121 Нобелийн шагналт төгсөгч — дэлхийд хамгийн олон. Кам мөрний эрэгт байрлах 31 колледж нэг хотыг дүүргэж байдаг. Punting буюу завиар Кам мөрийг дагаж явах нь оюутны уламжлал.",
+    facts:["🏆 121 Нобелийн шагналт — дэлхийн аль ч их сургуулиас илүү","🍎 Ньютон гравитацийг Кэмбрижид нээсэн — тэр гацуур мод одоо ч байна!","🧬 ДНХ-н бүтцийг (Watson & Crick) Кэмбрижид нээсэн","🚣 Punting — завиар Кам мөрийг дагаж явах нь оюутны уламжлал","🎭 Cambridge Footlights — Monty Python, John Cleese гарсан театрын клуб"],
+    alumni:[{name:"Исаак Ньютон",desc:"Физикч"},{name:"Чарльз Дарвин",desc:"Биологич"},{name:"Стивен Хокинг",desc:"Физикч"},{name:"Эмма Томпсон",desc:"Жүжигчин"},{name:"Zuckerberg биш ч...",desc:"Олон тэргүүн"}]
+  },
+  {
+    name:"MIT",country:"АНУ, Кэмбриж (Массачусетс)",region:"us",rank:"QS #1",
+    tuition:"$57,986/жил",scholarship:"Need-based бүрэн тэтгэлэг",hasSchol:true,hasMongol:true,cs:true,
+    apply:"Common App + MIT Application",deadline:"11-р сарын 1 (EA), 1-р сарын 1 (RD)",lang:"IELTS 7.0+ / TOEFL 100+",
+    website:"https://www.mit.edu",
+    mapLink:"https://maps.google.com/?q=MIT+Cambridge+Massachusetts",
+    campus:{size:"168 акр (68 га)",location:"Чарльз мөрний эрэг, Кэмбриж",founded:"1861 он",students:"11,500+ оюутан",style:"Орчин үеийн болон өвөрмөц архитектур",notable:"Stata Center, Dome, Media Lab, Infinite Corridor"},
+    desc:"MIT нь 1861 онд байгуулагдсан дэлхийн тэргүүний технологийн их сургууль. Чарльз мөрний эрэгт Бостоны хажууд байрладаг. AI, Robotics, CS чиглэлд хамгийн өндөр судалгааны үр дүнтэй. Орлого бага гэр бүлийн хүүхдүүдэд бүрэн тэтгэлэг олгодог — жилийн орлого $75k-аас доош бол бараг үнэгүй.",
+    facts:["🤖 Дэлхийн анхны AI лабораторийг MIT-д 1959 онд байгуулсан","💡 96 Нобелийн шагналт, 58 National Medal of Science","🚀 SpaceX, Dropbox, Akamai, Zoom — MIT-н оюутнуудын компани","📱 MIT оюутнууд жилд дунджаар 3,500 патент бүртгүүлдэг","🌊 Кампус Чарльз мөрний эрэгт — Бостоны panorama гайхамшигтай","🧩 Традиц: Хэрэгслийн мөчир дээр онгоц, хүнд хэцүү зүйлс тавьдаг (Hacking)"],
+    alumni:[{name:"Buzz Aldrin",desc:"Сарны хүн"},{name:"Kofi Annan",desc:"НҮБ ерөнхий нарийн бичиг"},{name:"Richard Feynman",desc:"Физикч"},{name:"Noam Chomsky",desc:"Хэл шинжлэл"}]
+  },
+  {
+    name:"Harvard University",country:"АНУ, Кэмбриж (Массачусетс)",region:"us",rank:"QS #4",
+    tuition:"$54,768/жил",scholarship:"Need-based, дундаж $53k/жил тэтгэлэг",hasSchol:true,hasMongol:true,cs:true,
+    apply:"Common App",deadline:"11-р сарын 1 (REA), 1-р сарын 1 (RD)",lang:"IELTS 7.0+ / TOEFL 100+",
+    website:"https://www.harvard.edu",
+    mapLink:"https://maps.google.com/?q=Harvard+University+Cambridge",
+    campus:{size:"209 акр (85 га) үндсэн кампус",location:"Кэмбриж, Массачусетс",founded:"1636 он",students:"23,000+ оюутан",style:"Georgian, Federal, Neoclassical архитектур",notable:"Widener Library, Harvard Yard, Memorial Hall, Science Center"},
+    desc:"1636 онд байгуулагдсан Harvard бол АНУ-н хамгийн эртний их сургууль. Harvard Yard нь АНУ-д хамгийн их зочилдог дурсгалт газруудын нэг. Хуулийн болон Бизнесийн сургуулиараа дэлхийд тэргүүлдэг.",
+    facts:["🏛️ АНУ-н хамгийн эртний их сургууль — 1636 он, Америкийн улс үүсэхээс өмнө!","💵 Эндоумент $50 тэрбум — дэлхийд хамгийн их","🎓 8 АНУ-н ерөнхийлөгч Harvard төгссөн","📚 Widener Library: 3.5 сая ном — гайхамшигтай нэрийн санд орсны дараа баригдсан гэх домог бий","😅 Mark Zuckerberg Facebook-н санаа боловсруулж Harvard-аас гарсан","🌍 150 гаруй улсаас оюутантай"],
+    alumni:[{name:"Barack Obama",desc:"АНУ ерөнхийлөгч"},{name:"Mark Zuckerberg",desc:"Meta"},{name:"Bill Gates",desc:"Microsoft"},{name:"Natalie Portman",desc:"Жүжигчин"},{name:"John F. Kennedy",desc:"АНУ ерөнхийлөгч"}]
+  },
+  {
+    name:"Stanford University",country:"АНУ, Стэнфорд (Калифорни)",region:"us",rank:"QS #5",
+    tuition:"$56,169/жил",scholarship:"Need-based, дундаж $60k/жил тэтгэлэг",hasSchol:true,hasMongol:true,cs:true,
+    apply:"Common App",deadline:"11-р сарын 1 (REA), 1-р сарын 2 (RD)",lang:"IELTS 7.0+ / TOEFL 100+",
+    website:"https://www.stanford.edu",
+    mapLink:"https://maps.google.com/?q=Stanford+University+California",
+    campus:{size:"8,180 акр (3,310 га) — АНУ-д хамгийн том кампусуудын нэг",location:"Стэнфорд, Калифорни — Silicon Valley-н зүрх",founded:"1885 он",students:"17,000+ оюутан",style:"Романеск болон иберийн архитектур",notable:"Main Quad, Hoover Tower, Memorial Church, Dish (параболик антен уул)"},
+    desc:"Stanford нь Silicon Valley-н зүрхэнд байрладаг. Кампус нь АНУ-д хамгийн том кампусуудын нэг — уул, ой, тал нутаг бүхий 8,000 акр. Жилийн 300+ нарлаг өдөр, температур 15-25°C. Google, Netflix, Instagram, Cisco, HP — бүгдийг Stanford-н оюутнууд үүсгэсэн.",
+    facts:["💰 Stanford-н оюутнуудын компаниудын нийт үнэлгээ $2.7 триллион","🌞 Жилд 300+ нарлаг өдөр — Калифорниагийн тэнгэр","🏈 Кампус нь Сан Францискогоос том — 8,000 акр","🎓 Элсэлтийн хувь 3.68% — дэлхийд хамгийн хатуу шалгаруулалтуудын нэг","🦅 Дугуйгаар кампусаа тойрч явах болно — маш том!","🌴 Пальмын мод, нарлаг уур амьсгал — жинхэнэ Калифорни"],
+    alumni:[{name:"Elon Musk",desc:"Tesla, SpaceX"},{name:"Larry Page",desc:"Google"},{name:"Sergey Brin",desc:"Google"},{name:"Reed Hastings",desc:"Netflix"},{name:"Jerry Yang",desc:"Yahoo"}]
+  },
+  {
+    name:"ETH Zürich",country:"Швейцарь, Цюрих",region:"europe",rank:"QS #7",
+    tuition:"~CHF 730/хагас жил (~$800/жил)",scholarship:"Excellence Scholarship",hasSchol:true,hasMongol:true,cs:true,
+    apply:"ETH шууд портал",deadline:"12-р сарын 15",lang:"IELTS 7.0+ / TOEFL 95+",
+    website:"https://ethz.ch",
+    mapLink:"https://maps.google.com/?q=ETH+Zurich",
+    campus:{size:"Хотын дунд (Zentrum) болон Hönggerberg кампус",location:"Цюрих хотын төв — Женевийн нуурны ойролцоо",founded:"1855 он",students:"23,000+ оюутан",style:"Неоренессанс болон орчин үеийн архитектур",notable:"Hauptgebäude (үндсэн байшин), HG дуган, Polyterrasse — Цюрих хотын panorama"},
+    desc:"ETH Zürich нь Европын хамгийн хямд, хамгийн чанартай технологийн их сургуулиудын нэг. Жилд ердөө ~$1,600 сургалтын төлбөр. Polyterrasse нь Цюрих хотын гайхамшигтай харагдалтай газар. Альберт Эйнштейн суралцаж, дараа нь багшилсан.",
+    facts:["⚛️ Альберт Эйнштейн ETH-д суралцаж, багшилсан","🔬 21 Нобелийн шагналт төгсөгчтэй","💰 Жилд ердөө ~$1,600 — Европт хамгийн хямд нэгнийх","🏔️ Цюрих хот амьдралын чанараар дэлхийд #1 байнга эрэмбэлэгддэг","🌊 Женевийн нуур, Альпийн уулс хажуудаа — байгаль гайхамшигтай","🍫 Швейцарийн шоколад, цаг — жинхэнэгийн нутаг"],
+    alumni:[{name:"Альберт Эйнштейн",desc:"Физикч"},{name:"John von Neumann",desc:"Математикч"},{name:"Wilhelm Röntgen",desc:"X-Ray нээгч"}]
+  },
+  {
+    name:"Imperial College London",country:"Их Британи, Лондон",region:"europe",rank:"QS #8",
+    tuition:"£32,000–£38,000/жил",scholarship:"President's PhD Scholarship, Imperial Bursary",hasSchol:true,hasMongol:false,cs:true,
+    apply:"UCAS портал",deadline:"1-р сарын 31",lang:"IELTS 6.5–7.0",
+    website:"https://www.imperial.ac.uk",
+    mapLink:"https://maps.google.com/?q=Imperial+College+London",
+    campus:{size:"Лондоны 5 кампус",location:"Кенсингтон, Лондон (үндсэн кампус)",founded:"1907 он",students:"21,000+ оюутан",style:"Victorian болон орчин үеийн архитектур",notable:"Queen's Tower, Royal Albert Hall хажуудаа, Hyde Park ойролцоо, Kensington"},
+    desc:"Imperial College London нь шинжлэх ухаан, инженер, анагаах ухаан, бизнесийн чиглэлд дэлхийд тэргүүлдэг. Лондоны Кенсингтон дүүрэгт, Royal Albert Hall болон Natural History Museum-н хажуудаа байрладаг. Зөвхөн STEM чиглэлтэй — маш тусгайлсан.",
+    facts:["🔬 Пенициллинийг Imperial College-д нээсэн (Александр Флеминг)","🌍 Оюутнуудын 60% нь гадаадын иргэд","🏙️ Кенсингтон — Лондоны хамгийн нэр хүндтэй дүүрэгт","💡 Гарааны компанийн экосистемд Их Британид тэргүүлдэг","🎭 Royal Albert Hall 5 минутын зайд — тэнд концерт сонсоорой!","🌳 Hyde Park хажуудаа — 350 акр ногоон цэцэрлэгт"],
+    alumni:[{name:"Alexander Fleming",desc:"Пенициллин нээгч"},{name:"H.G. Wells",desc:"Зохиолч"},{name:"Brian May",desc:"Queen хамтлаг (физикч ч гэж)"}]
+  },
+  {
+    name:"University of Toronto",country:"Канад, Торонто",region:"us",rank:"QS #25",
+    tuition:"CAD $45,000–$58,000/жил",scholarship:"Lester B. Pearson Scholarship (бүрэн тэтгэлэг)",hasSchol:true,hasMongol:true,cs:true,
+    apply:"OUAC портал",deadline:"1-р сарын 15",lang:"IELTS 6.5–7.0",
+    website:"https://www.utoronto.ca",
+    mapLink:"https://maps.google.com/?q=University+of+Toronto",
+    campus:{size:"3 кампус: St. George, Mississauga, Scarborough",location:"Торонто хотын төв (St. George кампус)",founded:"1827 он",students:"95,000+ оюутан — Канадын хамгийн том",style:"Gothic Revival болон орчин үеийн архитектур",notable:"Hart House, Convocation Hall, Robarts Library, CN Tower хажуудаа"},
+    desc:"Канадын хамгийн нэр хүндтэй их сургууль. Deep Learning-н эцэг Geoff Hinton энд багшилсан. Торонто хот 200 гаруй хэлтэй — дэлхийн хамгийн олон янзын хот. Pearson тэтгэлэг маш өрсөлдөөнтэй ч бүрэн тэтгэлэг.",
+    facts:["🤖 Deep Learning-н үндэслэгч Geoff Hinton (Google Brain) UofT-д багшилсан","🌍 Торонто 200 гаруй хэлтэй — дэлхийн хамгийн олон янзын хот","🏒 NHL Stanley Cup байнга Торонтогоор дамждаг","🎓 Pearson тэтгэлэг — дэлхийн хамгийн шилдэг бүрэн тэтгэлгүүдийн нэг","❄️ Канадын өвөл — -20°C хүрдэг, хайрцаг дулаан хувцас авч яв!","🏙️ CN Tower — дэлхийн хамгийн алдарт цамхагуудын нэг"],
+    alumni:[{name:"Geoff Hinton",desc:"AI/Deep Learning"},{name:"Lester B. Pearson",desc:"Канадын ерөнхий сайд"},{name:"Margaret Atwood",desc:"Зохиолч"}]
+  },
+  {
+    name:"McGill University",country:"Канад, Монреаль",region:"us",rank:"QS #32",
+    tuition:"CAD $22,000–$40,000/жил",scholarship:"Entrance Scholarship, International Award",hasSchol:true,hasMongol:false,cs:true,
+    apply:"Шууд",deadline:"1-р сарын 15",lang:"IELTS 6.5+",
+    website:"https://www.mcgill.ca",
+    mapLink:"https://maps.google.com/?q=McGill+University+Montreal",
+    campus:{size:"Mont-Royal уулын хормойд",location:"Монреаль хотын гол (Downtown)",founded:"1821 он",students:"40,000+ оюутан",style:"Victorian Gothic болон орчин үеийн",notable:"Redpath Museum, Arts Building, Mont-Royal цэцэрлэгт хүрээлэн дээр"},
+    desc:"МакГилл нь 'Канадын Harvard' гэгдэх бөгөөд Mont-Royal уулын хормойд байрладаг. Монреаль хот Англи+Франц хос хэлтэй, Солонгосын Сеулын дараах дэлхийн хамгийн олон оюутантай хотуудын нэг. AI судалгааны дэлхийн гол төв.",
+    facts:["🎸 Celine Dion, Leonard Cohen Монреаль гаралтай","🍁 Монреаль дэлхийд хамгийн их тасархай хоолтой хот (poutine!)","❄️ Газар доорх хотод 33 км коридор — хүйтэн өвлийг дулаанаар өнгөрөөдөг","🌍 Yoshua Bengio (AI эцгийн нэг) Монреальд байдаг","🎓 Монреаль дэлхийн оюутны хотуудад TOP-5-д байдаг"],
+    alumni:[{name:"William Shatner",desc:"Star Trek"},{name:"Wilder Penfield",desc:"Мэдрэл судлаач"},{name:"Pierre Trudeau",desc:"Канадын ерөнхий сайд"}]
+  },
+  {
+    name:"University of British Columbia",country:"Канад, Ванкувер",region:"us",rank:"QS #38",
+    tuition:"CAD $42,000–$55,000/жил",scholarship:"International Leader of Tomorrow Award",hasSchol:true,hasMongol:false,cs:true,
+    apply:"Шууд",deadline:"1-р сарын 15",lang:"IELTS 6.5+",
+    website:"https://www.ubc.ca",
+    mapLink:"https://maps.google.com/?q=University+of+British+Columbia+Vancouver",
+    campus:{size:"402 га — Номхон далайн эрэгт",location:"Point Grey, Ванкувер",founded:"1908 он",students:"68,000+ оюутан",style:"Орчин үеийн болон байгалийн",notable:"Rose Garden, Museum of Anthropology, Pacific Spirit Park хажуудаа, далайн харагдал"},
+    desc:"UBC-н кампус Номхон далайн эрэгт байрладаг — нэг талд далай, нөгөө талд ой. Ванкувер хот уул, ой, далайн хосолмол байгальтай. Азийн иргэдэд маш ойр — Хятад, Япон, Солонгос хоол хаа сайгүй. Голливудын олон кино Ванкуверт буулгагддаг.",
+    facts:["🏔️ Уул+Далай+Ой — Ванкуверийн гайхамшигтай байгаль","🌸 Ванкувер Азийн иргэдэд маш ойр — Хятад, Япон, Солонгос хоол хаа сайгүй","🎬 'Голливуд Норт' — олон дурсгалт кино Ванкуверт буулгагддаг","🌿 Канадын хамгийн ногоон, дулаан хот — өвөл -5°C л болдог","🌊 Кампусаас далай харагддаг — кофеоо уугаад далайд харна"],
+    alumni:[{name:"Justin Trudeau",desc:"Канадын ерөнхий сайд"},{name:"Joni Mitchell",desc:"Дуучин"},{name:"Kim Campbell",desc:"Канадын анхны эмэгтэй ерөнхий сайд"}]
+  },
+  {
+    name:"NUS (National University of Singapore)",country:"Сингапур",region:"asia",rank:"QS #8",
+    tuition:"SGD $17,550–$29,400/жил",scholarship:"ASEAN Scholarship, NUS Scholarship",hasSchol:true,hasMongol:false,cs:true,
+    apply:"NUS шууд",deadline:"2-р сарын 20",lang:"IELTS 6.5+",
+    website:"https://www.nus.edu.sg",
+    mapLink:"https://maps.google.com/?q=National+University+of+Singapore",
+    campus:{size:"150 га үндсэн кампус",location:"Kent Ridge, Сингапур",founded:"1905 он",students:"40,000+ оюутан",style:"Орчин үеийн тропик архитектур",notable:"University Cultural Centre, University Hall, Kent Ridge Park хажуудаа"},
+    desc:"NUS нь Азийн тэргүүний их сургуулиудын нэг. Сингапур хот-улс бол Азийн санхүүгийн нийслэл бөгөөд дэлхийд хамгийн аюулгүй, цэвэрхэн, зохион байгуулалттай. Тропикийн уур амьсгал — жилийн 12 сар дулаан.",
+    facts:["🦁 Сингапур хот-улсын тэргүүний их сургууль","🌴 Тропикийн уур амьсгал — жилийн 12 сар дулаан, борооны улирал бий","💼 Төгсөгчдийн ажилд орох хувь 90%+ — маш өндөр","✈️ Чанги нисэх буудал дэлхийд хамгийн шагналттай","🌍 Сингапур Монгол иргэдэд визгүй орох боломжтой"],
+    alumni:[{name:"Goh Chok Tong",desc:"Сингапурын ерөнхий сайд"},{name:"Tony Tan",desc:"Сингапурын ерөнхийлөгч"}]
+  },
+  {
+    name:"University of Melbourne",country:"Австрали, Мельбурн",region:"asia",rank:"QS #33",
+    tuition:"AUD $40,000–$47,000/жил",scholarship:"Melbourne International Undergraduate Scholarship",hasSchol:true,hasMongol:true,cs:true,
+    apply:"UAC / шууд",deadline:"9-р сар (эрт), 12-р сар (хожуу)",lang:"IELTS 6.5+",
+    website:"https://www.unimelb.edu.au",
+    mapLink:"https://maps.google.com/?q=University+of+Melbourne",
+    campus:{size:"Parkville кампус + хэд хэдэн дэд кампус",location:"Parkville, Мельбурн хотын дунд",founded:"1853 он",students:"50,000+ оюутан",style:"Gothic Revival болон орчин үеийн",notable:"Old Quad, Baillieu Library, University Square, кампус нь хотын зүрхэнд"},
+    desc:"Мельбурний их сургууль нь Австралийн анхны их сургуулиудын нэг. Мельбурн хот дэлхийн 'хамгийн амьдрах тохиромжтой хот'-оор байнга нэрлэгддэг. Монгол оюутны нийгэмлэг байдаг.",
+    facts:["🌏 Мельбурн 'хамгийн амьдрах тохиромжтой хот' жил бүр эрэмбэлэгддэг","☕ Flat white кофе энд гаралтай — кофений соёлоороо дэлхийд алдартай","🦘 Кенгуру, коала 1 цагт очих газарт байна","🏄 Дэлхийн шилдэг серфингийн эргүүд хажуудаа","🇲🇳 Монгол оюутны нийгэмлэг байдаг"],
+    alumni:[{name:"Rupert Murdoch",desc:"Медиа магнат"},{name:"John Cain",desc:"Викторийн ерөнхий сайд"}]
+  },
+  {
+    name:"University of Sydney",country:"Австрали, Сидней",region:"asia",rank:"QS #18",
+    tuition:"AUD $42,000–$50,000/жил",scholarship:"Sydney Scholars Award",hasSchol:true,hasMongol:false,cs:true,
+    apply:"Шууд",deadline:"10-р сар",lang:"IELTS 6.5+",
+    website:"https://www.sydney.edu.au",
+    mapLink:"https://maps.google.com/?q=University+of+Sydney",
+    campus:{size:"72 га үндсэн кампус",location:"Camperdown/Darlington, Сидней хотын дунд",founded:"1850 он",students:"60,000+ оюутан",style:"Неоготик — Гарри Поттер шиг!",notable:"Great Hall, Quadrangle, Fisher Library — Hogwarts-тай төстэй байшин"},
+    desc:"Сиднейн их сургууль нь Австралийн анхны их сургууль. Неоготик байшин нь Harry Potter-н Хогвартсыг санагдуулна. Сидней хот наран, далай, орчин үеийн амьдралыг нэгтгэсэн.",
+    facts:["🏛️ Неоготик кампус — Гарри Поттерийн Хогвартс шиг харагддаг","🏄 Бонди Beach — дэлхийн хамгийн алдарт эргийн нэг хажуудаа","🌞 Жилд 300+ нарлаг өдөр","🌏 Ази-Номхон далайн бүс нутагт ажлын боломж өргөн","🐨 Тарунга хүрээлэнд коала, кенгуру хотын дундаас 20 мин"],
+    alumni:[{name:"Gough Whitlam",desc:"Австралийн ерөнхий сайд"},{name:"Tony Abbott",desc:"Австралийн ерөнхий сайд"}]
+  },
+  {
+    name:"Peking University",country:"Хятад, Бээжин",region:"asia",rank:"QS #17",
+    tuition:"¥26,000–¥32,000/жил (~$4,500)",scholarship:"CSC тэтгэлэг — бүрэн тэтгэлэг",hasSchol:true,hasMongol:true,cs:true,
+    apply:"CSC Online / Шууд",deadline:"4-р сарын 30",lang:"HSK 4+ эсвэл IELTS 6.0+",
+    website:"https://www.pku.edu.cn",
+    mapLink:"https://maps.google.com/?q=Peking+University+Beijing",
+    campus:{size:"273 га — маш том, тухтай кампус",location:"Хайдянь дүүрэг, Бээжин",founded:"1898 он",students:"45,000+ оюутан",style:"Хятад уламжлалт архитектур, нуур, цэцэрлэгт",notable:"Уннамин нуур, Бо Я цамхаг, Тэнгэрийн гүнж цэцэрлэг хажуудаа"},
+    desc:"PKU нь 1898 онд байгуулагдсан Хятадын хамгийн нэр хүндтэй их сургуулиудын нэг. Кампус нь эзэн хааны цэцэрлэгт хүрээлэнгийн хажуудаа, нуур болон уламжлалт хятад архитектуртай. Монгол оюутнуудад CSC тэтгэлэг квот жил бүр байдаг.",
+    facts:["🏯 Кампус нь эзэн хааны цэцэрлэгт хүрээлэнгийн хажуудаа — нуур, тэнгэрийн гүнж байшин","🌸 Хаврын интоосны үед кампус дэлхийд хамгийн сайхан газруудын нэг болдог","🇲🇳 Монгол оюутнуудад CSC тэтгэлэг квот жил бүр байдаг","📚 Дэлхийн хамгийн том номын сануудын нэгтэй","🐉 Хятадын 'Элитийн' C9 League-н гишүүн"],
+    alumni:[{name:"Lu Xun",desc:"Зохиолч"},{name:"Chen Ning Yang",desc:"Нобелийн шагналт физикч"}]
+  },
+  {
+    name:"Tsinghua University",country:"Хятад, Бээжин",region:"asia",rank:"QS #20",
+    tuition:"¥26,000–¥45,000/жил (~$6,300)",scholarship:"CSC тэтгэлэг — бүрэн тэтгэлэг",hasSchol:true,hasMongol:true,cs:true,
+    apply:"CSC Online",deadline:"4-р сарын 30",lang:"HSK 5+ эсвэл IELTS 6.0+",
+    website:"https://www.tsinghua.edu.cn",
+    mapLink:"https://maps.google.com/?q=Tsinghua+University+Beijing",
+    campus:{size:"442 га — PKU-н хажуудаа",location:"Хайдянь дүүрэг, Бээжин",founded:"1911 он",students:"48,000+ оюутан",style:"Хятад уламжлалт + орчин үеийн хосолмол",notable:"Эртний зуны ордны нутаг дэвсгэрт баригдсан, Xinya бэхлэлтийн хавтан нуур"},
+    desc:"'Хятадын MIT' гэж нэрлэгддэг Цинхуа нь 1911 онд эзэн хааны ордны нутгийн дэвсгэрт байгуулагдсан. Инженер, CS, архитектурын чиглэлд Азид тэргүүлдэг. Хятадын удирдагч нарын олонх нь энд суралцсан.",
+    facts:["🔬 Хятадын AI, инженерийн хамгийн хүчтэй их сургууль","🌊 Эзэн хааны зуны ордны нутаг дэвсгэрт байрлах — нуур, гүүр, байгаль","🏆 QS Engineering & Technology дэлхийд 1-3 байранд ордог","👔 Хятадын олон ерөнхийлөгч, ерөнхий сайд энд төгссөн","💡 Патент бүртгэлтийн тоогоор дэлхийд тэргүүлдэг"],
+    alumni:[{name:"Xi Jinping",desc:"Хятадын удирдагч"},{name:"Hu Jintao",desc:"Хятадын ерөнхийлөгч"},{name:"Yang Zhenning",desc:"Нобелийн шагналт"}]
+  },
+  {
+    name:"Seoul National University",country:"Солонгос, Сеул",region:"asia",rank:"QS #41",
+    tuition:"₩4,000,000–₩5,000,000/хагас жил (~$3,800)",scholarship:"KGSP — бүрэн тэтгэлэг",hasSchol:true,hasMongol:true,cs:true,
+    apply:"GKS / KGSP портал",deadline:"2–3-р сар",lang:"IELTS 5.5+ эсвэл TOPIK",
+    website:"https://www.snu.ac.kr",
+    mapLink:"https://maps.google.com/?q=Seoul+National+University",
+    campus:{size:"900 га — Квансан уулын хормойд",location:"Гваналк дүүрэг, Сеул — уулын хормойд",founded:"1946 он",students:"28,000+ оюутан",style:"Орчин үеийн болон уламжлалт Солонгос архитектур",notable:"Nakseongdae Park, SNU Art Museum, уулаас Сеул хот харагддаг"},
+    desc:"SNU нь Солонгосын хамгийн нэр хүндтэй их сургууль. KGSP тэтгэлэг нь Монгол оюутнуудад жил бүр квот олгодог. Кампус нь Квансан уулын хормойд байрлах бөгөөд уулаас Сеул хотын panorama харагддаг.",
+    facts:["🇰🇷 Samsung, LG, Hyundai-н CEO нар ихэвчлэн SNU төгссөн","🌸 Хаврын интоос Кванаклын уулд маш сайхан болдог","📺 K-Drama, K-Pop оддын мөрөөдлийн их сургууль","🎓 KGSP тэтгэлэг — солонгос хэл сурах зуны коростой хамт","🏔️ Кампусаас Сеул хотын panorama — гайхамшигтай"],
+    alumni:[{name:"Moon Jae-in",desc:"Солонгосын ерөнхийлөгч"},{name:"Ban Ki-moon",desc:"НҮБ ерөнхий нарийн бичиг"}]
+  },
+  {
+    name:"KAIST",country:"Солонгос, Тэжон",region:"asia",rank:"QS #65",
+    tuition:"Ихэнх оюутанд үнэгүй + сарын тэтгэлэг",scholarship:"KAIST бүрэн тэтгэлэг",hasSchol:true,hasMongol:true,cs:true,
+    apply:"KAIST шууд",deadline:"9-р сарын 30 / 4-р сарын 30",lang:"IELTS 6.5+ / TOEFL 85+",
+    website:"https://www.kaist.ac.kr",
+    mapLink:"https://maps.google.com/?q=KAIST+Daejeon+Korea",
+    campus:{size:"291 га — Тэжон хотод",location:"Юусон дүүрэг, Тэжон хот",founded:"1971 он",students:"10,000+ оюутан",style:"Орчин үеийн судалгааны кампус",notable:"KAIST Science Town, Innovation Hall, Robotics Lab"},
+    desc:"'Солонгосын MIT' KAIST нь ихэнх оюутанд сургалтын төлбөр үнэгүй бөгөөд сарын тэтгэлэг олгодог. CS, Robotics, Engineering чиглэлд Азид тэргүүлдэг. Тэжон хот Сеулаас 1.5 цаг — тайван, оюутны хот.",
+    facts:["🤖 Дэлхийн хамгийн дэвшилтэт роботик судалгааны нэг KAIST-д байдаг","💻 ACM ICPC Programming олимпиадад KAIST байнга тэргүүлдэг","🆓 Бакалаврт ихэнх оюутанд сургалтын төлбөр үнэгүй","🔋 Солонгосын технологийн хөгжилд хамгийн их хувь нэмэр оруулсан","🌙 Тэжон хот Сеулаас тайван — судлахад тохиромжтой орчин"],
+    alumni:[{name:"Kwon Oh-hyun",desc:"Samsung Electronics захирал"},{name:"Kim Jung-ju",desc:"Nexon үүсгэгч"}]
+  },
+  {
+    name:"Technical University of Munich (TUM)",country:"Герман, Мюнхен",region:"europe",rank:"QS #37",
+    tuition:"€258/хагас жил (admin fee)",scholarship:"Deutschlandstipendium, DAAD",hasSchol:true,hasMongol:true,cs:true,
+    apply:"TUM шууд",deadline:"5-р сарын 31 (Winter)",lang:"IELTS 6.5+ / Герман B2+",
+    website:"https://www.tum.de",
+    mapLink:"https://maps.google.com/?q=Technical+University+of+Munich",
+    campus:{size:"Мюнхен хот + Гархинг судалгааны кампус + Вайенштефан",location:"Мюнхен хотын дунд (үндсэн), Гархинг (судалгаа)",founded:"1868 он",students:"50,000+ оюутан",style:"Неоренессанс + орчин үеийн",notable:"Hauptgebäude Arcisstraße, BMW Welt 20 мин, Englischer Garten хажуудаа"},
+    desc:"TUM нь Европын хамгийн шилдэг технологийн их сургуулиудын нэг бөгөөд жилд ердөө €516 төлдөг. BMW, Siemens, MAN зэрэг компаниудтай нягт хамтардаг. Мюнхен хот Баварийн нийслэл — шар айраг, футбол, Alps.",
+    facts:["💰 Жилд ердөө €516 — Европт хамгийн хямд их сургуулиудын нэг","🚗 BMW, Siemens, MAN — TUM оюутнуудыг шууд авч ажилладаг","🍺 Мюнхен Oktoberfest — дэлхийн хамгийн том шар айрагны фестиваль","🏔️ Альпийн уулс 1 цагт — дугуйгаар, явганаар, лыжийн аялал","⚙️ Robotics, Aerospace Engineering-д Европт тэргүүнд"],
+    alumni:[{name:"Carl von Linde",desc:"Хөргөгчийн зохион бүтээгч"},{name:"Rudolf Diesel",desc:"Дизель хөдөлгүүр"}]
+  },
+  {
+    name:"Politecnico di Milano",country:"Итали, Милан",region:"europe",rank:"QS #139",
+    tuition:"€3,000–€4,000/жил",scholarship:"Erdis Lombardia DSU тэтгэлэг",hasSchol:true,hasMongol:true,cs:true,
+    apply:"Polimi.it",deadline:"4–7-р сар",lang:"IELTS 6.5+",
+    website:"https://www.polimi.it",
+    mapLink:"https://maps.google.com/?q=Politecnico+di+Milano",
+    campus:{size:"Милан хотод 5 кампус",location:"Леонардо кампус — Милан хотын дунд (үндсэн)",founded:"1863 он",students:"45,000+ оюутан",style:"Орчин үеийн + 19-р зууны байшин",notable:"Piazza Leonardo da Vinci, Duomo di Milano 15 мин, Brera дүүрэгт"},
+    desc:"Политехникийн их сургууль Милан нь Италийн тэргүүний технологийн их сургууль. Design, Engineering, Architecture-д Европт тэргүүлдэг. Миланы загварын долоо хоногтой нэг хотод амьдрах боломж.",
+    facts:["👗 Загварын нийслэл Миланд байрлах — Gucci, Versace, Prada штаб хажуудаа","🏆 Engineering Design-д Европт #1","🍕 Жинхэнэ Итали хоол — pizza, pasta, risotto","💶 DSU тэтгэлэг авбал сургалтын төлбөр маш бага болдог","🎨 Leonardo da Vinci-н 'Тайны зоог' Миланд хадгалагддаг"],
+    alumni:[{name:"Aldo Rossi",desc:"Архитектор"},{name:"Renzo Piano",desc:"Архитектор"}]
+  },
+  {
+    name:"Sapienza University of Rome",country:"Итали, Ром",region:"europe",rank:"QS #171-180",
+    tuition:"€1,000–€2,500/жил",scholarship:"DSU тэтгэлэг — хоол, орон байр, мөнгөн",hasSchol:true,hasMongol:true,cs:true,
+    apply:"Universitaly.it",deadline:"7–9-р сар",lang:"IELTS 6.0+",
+    website:"https://www.uniroma1.it",
+    mapLink:"https://maps.google.com/?q=Sapienza+University+Rome",
+    campus:{size:"220 га — Ромын хамгийн том кампус",location:"San Lorenzo дүүрэг, Ром хотын дунд",founded:"1303 он",students:"110,000+ оюутан — Европын хамгийн том!",style:"Фашист архитектур + орчин үеийн",notable:"Piazzale Aldo Moro, Rector's Building, Museo Arte Classica"},
+    desc:"Сапиенца нь 1303 онд байгуулагдсан дэлхийн хамгийн эртний их сургуулиудын нэг, Европын хамгийн том их сургууль. Ромд байрлах бол Колизей, Ватикан, Трей фонтан хажуудаа. Маш хямд сургалтын төлбөртэй.",
+    facts:["🏛️ 720 жилийн түүхтэй — дэлхийн хамгийн эртний их сургуулиудын нэг","👥 110,000 оюутантай — Европын хамгийн том их сургууль","🏟️ Колизей, Ватикан — явган явж очдог газарт","😍 Ромын амьдрал — мотороор, гудамжийн кафе, жинхэнэ Итали","💶 Жилд €1,000-2,500 — Европт хамгийн хямдуудын нэг"],
+    alumni:[{name:"Aldo Moro",desc:"Италийн ерөнхий сайд"},{name:"Mario Draghi",desc:"Европын Төв банк"}]
+  },
+  {
+    name:"University of Bologna",country:"Итали, Болонь",region:"europe",rank:"QS #154",
+    tuition:"€1,000–€3,000/жил",scholarship:"ER.GO тэтгэлэг",hasSchol:true,hasMongol:true,cs:true,
+    apply:"Universitaly.it",deadline:"7–9-р сар",lang:"IELTS 6.0+",
+    website:"https://www.unibo.it",
+    mapLink:"https://maps.google.com/?q=University+of+Bologna",
+    campus:{size:"Болонь хотын дунд тархсан",location:"Болонь хот (Эмилиа-Романья бүс)",founded:"1088 он — дэлхийн хамгийн эртний!",students:"87,000+ оюутан",style:"Ренессансын архитектур — эртний пиацза, аркадууд",notable:"Archiginnasio (эртний байшин), Piazza Maggiore, нарлаг аркад гудамж"},
+    desc:"Болоньяны их сургууль нь 1088 онд байгуулагдсан — ДЭЛХИЙН ХАМГИЙН ЭРТНИЙ ИХ СУРГУУЛЬ! Болонь хот Итали хоолоор алдартай — Bolognese соос, tagliatelle, mortadella энд гаралтай. Ромоос 2 цагт, Миланаас 1 цагт.",
+    facts:["🏆 1088 он — ДЭЛХИЙН ХАМГИЙН ЭРТНИЙ ИХ СУРГУУЛЬ","🍖 Bolognese соос, tagliatelle, mortadella — энэ хотоос гаралтай!","📜 Их сургуулийн 'тогтолцоо'-г дэлхийд нэвтрүүлсэн","🚂 Миланаас 1 цаг, Ромоос 2 цаг — Итали аялахад маш тохиромжтой байршил","🌟 Dante Alighieri, Copernicus нар суралцсан"],
+    alumni:[{name:"Dante Alighieri",desc:"Зохиолч"},{name:"Nicolaus Copernicus",desc:"Одон орон судлаач"},{name:"Umberto Eco",desc:"Зохиолч"}]
+  },
+  {
+    name:"University of Edinburgh",country:"Их Британи, Эдинбург",region:"europe",rank:"QS #27",
+    tuition:"£21,000–£28,600/жил",scholarship:"Global Scholarships, Chevening",hasSchol:true,hasMongol:true,cs:true,
+    apply:"UCAS портал",deadline:"1-р сарын 31",lang:"IELTS 6.5–7.0",
+    website:"https://www.ed.ac.uk",
+    mapLink:"https://maps.google.com/?q=University+of+Edinburgh",
+    campus:{size:"Эдинбург хотод тархсан — Old Town, New Town, King's Buildings",location:"Эдинбург хотын дунд",founded:"1583 он",students:"40,000+ оюутан",style:"Victorian, Georgian, дунд зуун архитектур",notable:"Old College, McEwan Hall, Meadows цэцэрлэгт, Edinburgh Castle харагдах"},
+    desc:"Эдинбургийн их сургууль нь 1583 онд байгуулагдсан. CS болон AI судалгааны чиглэлд Европт тэргүүлдэг. Эдинбург хот Шотландын нийслэл бөгөөд дунд зуун байшин, цайз, ой нуурын хосолмол байгальтай.",
+    facts:["🤖 Европын хамгийн хүчтэй AI судалгааны байгуулагуудын нэг энд байдаг","🏰 Эдинбургийн цайзыг харж суралцана — 1,000 жилийн түүхтэй цайз","🎻 Edinburgh Festival — дэлхийн хамгийн том урлагийн фестиваль жил бүр болдог","🥃 Шотландын виски — олон зуун жилийн уламжлал, дистилери тойрч болно","🌿 Шотландын байгаль — нуур, уул, вереск"],
+    alumni:[{name:"Charles Darwin",desc:"Биологич (суралцсан)"},{name:"Arthur Conan Doyle",desc:"Sherlock Holmes зохиогч"},{name:"James Watt",desc:"Уурын машин"}]
+  },
+  {
+    name:"KTH Royal Institute of Technology",country:"Швед, Стокгольм",region:"europe",rank:"QS #97",
+    tuition:"€13,000–€15,000/жил",scholarship:"Swedish Institute Scholarship",hasSchol:true,hasMongol:true,cs:true,
+    apply:"University Admissions Sweden",deadline:"1-р сарын 15",lang:"IELTS 6.5+",
+    website:"https://www.kth.se",
+    mapLink:"https://maps.google.com/?q=KTH+Royal+Institute+of+Technology+Stockholm",
+    campus:{size:"Стокгольмын 4 кампус",location:"Валлхалаваген, Стокгольм (үндсэн)",founded:"1827 он",students:"15,000+ оюутан",style:"Романтик үндэсний архитектур",notable:"KTH Main Campus — тоосго улаан байшин, Стокгольмын метроны хажуудаа"},
+    desc:"KTH нь Скандинавын тэргүүний технологийн их сургууль. Стокгольм хот аралд баригдсан — 14 арлаас бүрддэг. Swedish Institute тэтгэлэг авбал амьдрах зардал, сургалтын төлбөр бүгдийг нь хариуцдаг.",
+    facts:["🌍 Стокгольм 14 арал дээр баригдсан — усны хотод суралцана","💡 Spotify, Minecraft, King (Candy Crush) Швед гаралтай","❄️ Хойд гэрэл (Aurora Borealis) зарим жил Стокгольмоос харагддаг","🚴 Стокгольм дугуйн зам сайтаараа дэлхийд тэргүүнд","😊 Швед дэлхийн хамгийн аз жаргалтай улсуудын нэгт жил бүр ордог"],
+    alumni:[{name:"Håkan Samuelsson",desc:"Volvo Cars захирал"},{name:"Johan Rockström",desc:"Байгаль орчны эрдэмтэн"}]
+  },
+  {
+    name:"TU Delft",country:"Нидерланд, Делфт",region:"europe",rank:"QS #54",
+    tuition:"€18,000–€20,000/жил (EU-аас бус)",scholarship:"Holland Scholarship, Excellence Scholarship",hasSchol:true,hasMongol:false,cs:true,
+    apply:"TU Delft шууд",deadline:"4-р сарын 1",lang:"IELTS 6.5+",
+    website:"https://www.tudelft.nl",
+    mapLink:"https://maps.google.com/?q=TU+Delft+Netherlands",
+    campus:{size:"161 га — Делфт хотын зүүн талд",location:"Делфт хот, Нидерланд",founded:"1842 он",students:"26,000+ оюутан",style:"Орчин үеийн — Library гэр маягийн хамгийн алдарт байшинтай",notable:"TU Delft Library (ногоон дээвэртэй) — дэлхийн хамгийн алдарт номын сануудын нэг"},
+    desc:"TU Delft нь Нидерландын хамгийн нэр хүндтэй технологийн их сургууль. Ногоон дээвэртэй номын сан нь дэлхийд хамгийн алдарт байшингуудын нэг. Делфт хот жижигхэн, тайван, дугуйн хот.",
+    facts:["🚴 Делфт хот дугуйгаар зорчдогоороо дэлхийд алдартай","📚 TU Delft-н номын сан ногоон дээвэртэй — Instagram-д маш алдартай","🌷 Нидерланд улирлын цэцэгт талбайнуудаараа гайхамшигтай (Keukenhof)","⚙️ Aerospace Engineering-д Европт тэргүүлдэг","🧀 Делфтийн цагаан фарфор, Гоудагийн бяслаг — 30 минутын зайд"],
+    alumni:[{name:"Willem Einthoven",desc:"ЭКГ-н зохион бүтээгч"},{name:"Christiaan Huygens",desc:"Математикч, физикч"}]
+  },
+  {
+    name:"ETH Zürich",country:"Швейцарь, Цюрих",region:"europe",rank:"QS #7",
+    tuition:"~CHF 730/хагас жил (~$800/жил)",scholarship:"Excellence Scholarship",hasSchol:true,hasMongol:true,cs:true,
+    apply:"ETH шууд",deadline:"12-р сарын 15",lang:"IELTS 7.0+",
+    website:"https://ethz.ch",
+    mapLink:"https://maps.google.com/?q=ETH+Zurich",
+    campus:{size:"Хотын дунд (Zentrum) + Hönggerberg",location:"Цюрих",founded:"1855",students:"23,000+",style:"Неоренессанс",notable:"Polyterrasse — Цюрих panorama"},
+    desc:"Давхардал — дараагийн жагсаалтаас хас",facts:[],alumni:[]
+  },
+  {
+    name:"University of Manchester",country:"Их Британи, Манчестер",region:"europe",rank:"QS #34",
+    tuition:"£25,000–£30,000/жил",scholarship:"Global Futures Scholarship",hasSchol:true,hasMongol:false,cs:true,
+    apply:"UCAS",deadline:"1-р сарын 31",lang:"IELTS 6.5+",
+    website:"https://www.manchester.ac.uk",
+    mapLink:"https://maps.google.com/?q=University+of+Manchester",
+    campus:{size:"Оксфорд Road дагуу — хотын дунд",location:"Манчестер хотын дунд (Oxford Road)",founded:"1824 он",students:"40,000+ оюутан",style:"Gothic Revival болон Victorian архитектур",notable:"Whitworth Art Gallery, Alan Turing Building, Manchester Museum"},
+    desc:"Манчестерийн их сургууль нь 25 Нобелийн шагналт төгсөгчтэй. Атомын цөмийг Manchester-д хагалсан. Manchester United, Manchester City — хоёр дэлхийн клубтай хот. Лондонгоос 40-50% хямд амьдрах зардал.",
+    facts:["🏆 25 Нобелийн шагналт төгсөгчтэй — их гавьяатай","⚽ Man United + Man City — нэг хотод хоёр дэлхийн клуб","🎸 Oasis, The Smiths, The Stone Roses — рокийн нийслэл","🔬 Атомын цөмийг Ernest Rutherford Манчестерт хагалсан","💰 Лондонгоос 40-50% хямд амьдрах зардал"],
+    alumni:[{name:"Ernest Rutherford",desc:"Цөмийн физикч"},{name:"Alan Turing",desc:"Компьютерийн эцэг"},{name:"Brian Cox",desc:"Физикч, ТВ нэвтрүүлэгч"}]
+  },
+  {
+    name:"University of Vienna",country:"Австри, Вена",region:"europe",rank:"QS #151-200",
+    tuition:"€1,500/жил (EU-аас бус)",scholarship:"Ernst Mach Grant, OeAD Scholarship",hasSchol:true,hasMongol:false,cs:true,
+    apply:"Шууд",deadline:"9-р сарын 5 (Winter)",lang:"IELTS 6.0+ / Герман B2+",
+    website:"https://www.univie.ac.at",
+    mapLink:"https://maps.google.com/?q=University+of+Vienna",
+    campus:{size:"Вена хотод тархсан байшингууд",location:"Universitätsring, Вена хотын дунд",founded:"1365 он",students:"90,000+ оюутан — Европт хамгийн том нэгийх",style:"Неоготик байшин + орчин үеийн",notable:"Hauptgebäude (Ринг дагуу), Votivkirche хажуудаа, Ратхаус ойролцоо"},
+    desc:"Венийн их сургууль нь 1365 онд байгуулагдсан Германы хэлтэй орнуудын хамгийн эртний их сургуулиудын нэг. Вена хот Европын соёлын нийслэл — Моцарт, Бетховен, Фрейд Венийнх. Сургалтын төлбөр маш хямд.",
+    facts:["🎵 Моцарт, Бетховен, Шуберт Венийнх — хаа сайгүй сонгодог хөгжим","🏰 Хабсбургийн эзэнт гүрний нийслэл байсан — Schönbrunn ордон 20 мин","☕ Венийн кофены соёл ЮНЕСКО-н дэлхийн өвд бүртгэгдсэн","💰 Сургалтын төлбөр жилд ~€1,500 — маш хямд","🎭 Дэлхийн opera, тэмцэн, балетын нийслэл"],
+    alumni:[{name:"Sigmund Freud",desc:"Психоанализийн эцэг"},{name:"Erwin Schrödinger",desc:"Квантын физикч"}]
+  },
+  {
+    name:"KU Leuven",country:"Бельги, Лёвен",region:"europe",rank:"QS #74",
+    tuition:"€5,000–€9,000/жил (EU-аас бус)",scholarship:"KU Leuven Masters Fellowship",hasSchol:true,hasMongol:false,cs:true,
+    apply:"KU Leuven шууд",deadline:"3-р сарын 1",lang:"IELTS 6.5+",
+    website:"https://www.kuleuven.be",
+    mapLink:"https://maps.google.com/?q=KU+Leuven+Belgium",
+    campus:{size:"Лёвен хотын дунд — оюутны хот",location:"Лёвен хот, Бельги",founded:"1425 он",students:"60,000+ оюутан",style:"Gothic архитектур хотын дунд",notable:"University Hall (Town Hall), Stella Artois пивний завод хажуудаа!"},
+    desc:"KU Leuven нь 1425 онд байгуулагдсан Бельгийн хамгийн нэр хүндтэй их сургуулиудын нэг. Европын судалгааны их сургуулиудын дунд байнга тэргүүлдэг. Лёвен хот Брюсселийн хажуудаа.",
+    facts:["🍺 Stella Artois шар айрагны анхны завод Лёвенд байдаг!","🏆 Европын судалгааны их сургуулиудын TOP-д байдаг","🌍 ЕС-н штаб Брюссел 30 мин — дадлагын боломж өргөн","🇧🇪 Бельгийн шоколад, вафли — жинхэнэгийн нутаг","🎓 Готик байшинтай хотын дунд суралцана"],
+    alumni:[{name:"Mercator",desc:"Газар зүйч — дэлхийн газрын зургийг хийсэн"}]
+  },
+  {
+    name:"University of Amsterdam",country:"Нидерланд, Амстердам",region:"europe",rank:"QS #61",
+    tuition:"€9,900–€14,000/жил (EU-аас бус)",scholarship:"Holland Scholarship, UvA Excellence Scholarship",hasSchol:true,hasMongol:false,cs:true,
+    apply:"Шууд",deadline:"4-р сарын 1",lang:"IELTS 6.5+",
+    website:"https://www.uva.nl",
+    mapLink:"https://maps.google.com/?q=University+of+Amsterdam",
+    campus:{size:"Амстердам хотод тархсан",location:"Амстердам хотын дунд",founded:"1632 он",students:"40,000+ оюутан",style:"Dutch Golden Age архитектур — суваг, тоосгон байшин",notable:"Agnietenkapel (хамгийн эртний байшин), Roeterseiland, суваг дагуу байрлах байшингууд"},
+    desc:"Амстердамын их сургуулийн байшингууд суваг дагуух аяымтгай байшингуудад байрладаг. Амстердам хот дугуй, суваг, музейгээрээ дэлхийд алдартай. Data Science, AI чиглэлд маш хүчтэй.",
+    facts:["🚴 Хүн амаас илүү олон дугуй байдаг хот!","🌷 Амстердамын суваг ЮНЕСКО-н дэлхийн өвд бүртгэгдсэн","🎨 Ван Гог, Рембрандт — Амстердамаас гаралтай","🌍 Дэлхийн 2-р том цэцгийн зах — Амстердам","💼 Европын хамгийн том бизнесийн хотуудын нэг"],
+    alumni:[{name:"Gerard 't Hooft",desc:"Нобелийн шагналт физикч"},{name:"Max Tinbergen",desc:"Нобелийн шагналт"}]
+  },
+  {
+    name:"Free University of Berlin",country:"Герман, Берлин",region:"europe",rank:"QS #118",
+    tuition:"€324/хагас жил (admin fee)",scholarship:"DAAD, Deutschlandstipendium",hasSchol:true,hasMongol:false,cs:true,
+    apply:"FU Berlin шууд",deadline:"5-р сарын 15",lang:"IELTS 6.0+ / Герман B2+",
+    website:"https://www.fu-berlin.de",
+    mapLink:"https://maps.google.com/?q=Free+University+Berlin",
+    campus:{size:"Далем дүүрэг — тайван ногоон кампус",location:"Далем, Берлин (баруун өмнөд)",founded:"1948 он",students:"35,000+ оюутан",style:"1950-60-аад оны орчин үеийн архитектур",notable:"Philological Library (Brain байшин — Норман Фостер), Ботаникийн цэцэрлэг хажуудаа"},
+    desc:"Берлиний Чөлөөт их сургуулийн Номын сан нь 'Тархи' хэлбэрийн байшинтай — архитектор Норман Фостерийн шедевр. Берлин хот Европын хамгийн хөгжилтэй, соёлжуу хотуудын нэг. Жилд ердөө €648.",
+    facts:["🏛️ FU Library — 'Тархи' хэлбэрийн байшин, Норман Фостер дизайн","💰 Жилд ердөө €648 — маш хямд","🎸 Берлин — Европын Techno хөгжимт соёлын нийслэл","🌍 Берлин стартапуудын TOP-5 хотод","🏛️ Берлиний хана нурсан газар одоо амьдралын төв"],
+    alumni:[{name:"John F. Kennedy",desc:"АНУ ерөнхийлөгч (зочилсон, 'Ich bin ein Berliner')"},{name:"Нобелийн олон шагналт",desc:""}]
+  },
+  {
+    name:"Humboldt University of Berlin",country:"Герман, Берлин",region:"europe",rank:"QS #130",
+    tuition:"€324/хагас жил (admin fee)",scholarship:"DAAD Scholarship",hasSchol:true,hasMongol:false,cs:true,
+    apply:"HU Berlin шууд",deadline:"5-р сарын 15",lang:"IELTS 6.0+ / Герман B2+",
+    website:"https://www.hu-berlin.de",
+    mapLink:"https://maps.google.com/?q=Humboldt+University+Berlin",
+    campus:{size:"Unter den Linden — Берлиний гол гудамжинд",location:"Митте, Берлин хотын зүрхэнд",founded:"1810 он",students:"33,000+ оюутан",style:"Неоклассик архитектур",notable:"Main Building Unter den Linden, Brandenburger Tor 5 мин, Берлиний хана 10 мин"},
+    desc:"Хумбольдтын их сургууль нь орчин үеийн их сургуулийн загварыг дэлхийд нэвтрүүлсэн. Unter den Linden гудамжинд — Берлиний хамгийн алдарт гудамж. Brandenburg Gate, Berlin Wall-аас 5-10 минут.",
+    facts:["🏆 29 Нобелийн шагналт — Marx, Planck, Einstein бүгд холбоотой","📚 Орчин үеийн их сургуулийн загварыг дэлхийд нэвтрүүлсэн (Humboldt model)","🚶 Brandenburg Gate 5 минутын зайд — гарч алхаад харна","💰 Жилд ердөө €648 — маш хямд","🎭 Берлиний State Opera Unter den Linden дагуу"],
+    alumni:[{name:"Karl Marx",desc:"Философич"},{name:"Max Planck",desc:"Квантын физикийн эцэг"},{name:"Heinrich Heine",desc:"Яруу найрагч"}]
+  },
+  {
+    name:"University of Copenhagen",country:"Дани, Копенгаген",region:"europe",rank:"QS #121",
+    tuition:"€12,000–€17,000/жил (EU-аас бус)",scholarship:"Danish Government Scholarship",hasSchol:true,hasMongol:false,cs:true,
+    apply:"Шууд",deadline:"3-р сарын 1",lang:"IELTS 6.5+",
+    website:"https://www.ku.dk",
+    mapLink:"https://maps.google.com/?q=University+of+Copenhagen",
+    campus:{size:"Копенгаген хотод тархсан",location:"Фредериксберг, Копенгаген хотын дунд",founded:"1479 он",students:"38,000+ оюутан",style:"Gothic болон орчин үеийн",notable:"Frue Plads (үндсэн байшин), Botanical Garden хажуудаа, Nørreport станц ойролцоо"},
+    desc:"Копенгагений их сургууль нь 1479 онд байгуулагдсан. Данийн хамгийн том, хамгийн нэр хүндтэй их сургууль. Нильс Борын институт энд байдаг — квантын физикийн дэлхийн тэргүүн байгуулага.",
+    facts:["🚴 Копенгаген дугуйгаар зорчдогоороо дэлхийд #1 — суралцсаар явна","⚛️ Нильс Борын институт энд байдаг — квантын физик","🌱 2025 он гэхэд нүүрстөрөгч тэглэх зорилготой хот","🧜 Жижиг Гоёмсог Далайн Охин хөшөө — Андерсений казкийн нутаг","😊 Данийн Hygge философи — затишье, аз жаргал"],
+    alumni:[{name:"Niels Bohr",desc:"Квантын физикч"},{name:"Søren Kierkegaard",desc:"Философич (суралцсан)"}]
+  },
+  {
+    name:"Lund University",country:"Швед, Лунд",region:"europe",rank:"QS #97",
+    tuition:"€13,000–€17,000/жил",scholarship:"Swedish Institute Scholarship",hasSchol:true,hasMongol:false,cs:true,
+    apply:"University Admissions Sweden",deadline:"1-р сарын 15",lang:"IELTS 6.5+",
+    website:"https://www.lu.se",
+    mapLink:"https://maps.google.com/?q=Lund+University+Sweden",
+    campus:{size:"Лунд хотын дунд — жижигхэн оюутны хот",location:"Лунд хот, Швед — Данийн хилийн ойролцоо",founded:"1666 он",students:"44,000+ оюутан",style:"Classsical Scandinavian архитектур",notable:"Lund Cathedral (Лундын сүм), University Main Building, Botanical Garden"},
+    desc:"Лундын их сургууль нь Скандинавын хамгийн нэр хүндтэй их сургуулиудын нэг. Данийн Копенгаген хотоос зөвхөн 15 минут — гүүрийн эргэнд. Жижигхэн хот, бүх зүйл явган явах зайд.",
+    facts:["🌉 Данийн Копенгаген хотоос 15 минут — хоёр улсыг нэгэн зэрэг мэдрэнэ","⚡ MAX IV лабораторид дэлхийн хамгийн тод рентгений туяа гардаг","🌷 Жижигхэн хот — кампус нь хотын зүрхэнд байрладаг","🌍 160+ улсаас оюутан татдаг","🎓 Швед, Дания аль алиных соёлыг мэдрэх боломжтой"],
+    alumni:[{name:"Svante Pääbo",desc:"2022 Нобелийн шагналт (Неандерталь ДНХ)"},{name:"Björn Borg",desc:"Теннисчин"}]
+  },
+  {
+    name:"Trinity College Dublin",country:"Ирланд, Дублин",region:"europe",rank:"QS #81",
+    tuition:"€17,500–€24,000/жил",scholarship:"Trinity Scholarship",hasSchol:true,hasMongol:false,cs:true,
+    apply:"CAO / шууд",deadline:"2-р сарын 1",lang:"IELTS 6.5+",
+    website:"https://www.tcd.ie",
+    mapLink:"https://maps.google.com/?q=Trinity+College+Dublin",
+    campus:{size:"Дублиний хотын зүрхэнд 47 акр",location:"Дублин хотын дунд — College Green",founded:"1592 он",students:"18,000+ оюутан",style:"Georgian болон Collegiate Gothic архитектур",notable:"The Long Room Library, Book of Kells, Fellows' Square, Campanile"},
+    desc:"Тринити нь 1592 онд байгуулагдсан Ирландын хамгийн нэр хүндтэй их сургууль. Book of Kells — 800 оны ирландын гар бичмэл — энд хадгалагддаг. Брексит-н дараа ЕС-д байдаг англи хэлтэй их сургуулиудын нэг.",
+    facts:["📖 Book of Kells — 1,200 жилийн настай гар бичмэл кампусд хадгалагддаг","🍺 Гиннесс шар айраг Дублинд зохион бүтээгдсэн — Гиннессийн үйлдвэр хажуудаа","🌍 Брексит-н дараа ЕС-д үлдсэн англи хэлтэй 'UK хэв маягийн' их сургууль","🎭 Оскар Уайлд, Сэмюэль Беккет Тринити төгссөн","🏰 Дублиний хаалтны дотор — хотын дунд дунд зуун байшин"],
+    alumni:[{name:"Oscar Wilde",desc:"Зохиолч"},{name:"Samuel Beckett",desc:"Нобелийн шагналт зохиолч"},{name:"Bram Stoker",desc:"Дракулагийн зохиогч"}]
+  },
+  {
+    name:"Seoul National University",country:"Солонгос, Сеул",region:"asia",rank:"QS #41",
+    tuition:"₩4,000,000/хагас жил",scholarship:"KGSP бүрэн тэтгэлэг",hasSchol:true,hasMongol:true,cs:true,
+    apply:"KGSP портал",deadline:"2–3-р сар",lang:"IELTS 5.5+ / TOPIK",
+    website:"https://www.snu.ac.kr",
+    mapLink:"https://maps.google.com/?q=Seoul+National+University",
+    campus:{size:"900 га",location:"Сеул",founded:"1946",students:"28,000+",style:"Орчин үеийн",notable:"Уулын panorama"},
+    desc:"Давхардсан — устгах",facts:[],alumni:[]
+  },
+  {
+    name:"Yonsei University",country:"Солонгос, Сеул",region:"asia",rank:"QS #79",
+    tuition:"₩6,000,000–₩8,000,000/жил (~$6,000)",scholarship:"KGSP, Yonsei International Scholarship",hasSchol:true,hasMongol:true,cs:true,
+    apply:"KGSP / шууд",deadline:"2–3-р сар",lang:"IELTS 6.0+",
+    website:"https://www.yonsei.ac.kr",
+    mapLink:"https://maps.google.com/?q=Yonsei+University+Seoul",
+    campus:{size:"Синчон дүүрэгт — Сеулын баруун хэсэгт",location:"Синчон, Сеул",founded:"1885 он",students:"38,000+ оюутан",style:"Gothic Revival + орчин үеийн",notable:"Underwood Hall (готик байшин), Sinchon дүүрэгт — залуучуудын тоглоомын газар, Hongdae хажуудаа"},
+    desc:"Ёнсей нь 1885 онд байгуулагдсан SKY-н нэг. Синчон дүүрэгт — Сеулын хамгийн хөгжилтэй, залуучуудын дүүрэгт. Hongdae (хөгжимт, уран бүтээлийн дүүрэг) хажуудаа. K-Pop оддын нутаг.",
+    facts:["🎵 K-Pop оддын олонх нь Сеулд амьдардаг — тааралдах боломж өндөр","🏙️ Синчон + Hongdae — Сеулын хамгийн амьд, хөгжилтэй хоёр дүүрэгт","🌸 Хаврын интоос Сеулд гайхамшигтай болдог","🍜 Korean BBQ, Bibimbap, Ramen — хоол нь маш амттай","⚽ Ёнсей vs Корё их тоглоом — жилд нэг удаа болох Солонгосын хамгийн том оюутны арга хэмжээ"],
+    alumni:[{name:"Syngman Rhee",desc:"Солонгосын анхны ерөнхийлөгч"},{name:"Kim Young-sam",desc:"Солонгосын ерөнхийлөгч"}]
+  },
+  {
+    name:"Lomonosov Moscow State University",country:"Орос, Москва",region:"europe",rank:"QS #87",
+    tuition:"₽300,000–₽500,000/жил",scholarship:"Оросын засгийн газрын тэтгэлэг",hasSchol:true,hasMongol:true,cs:true,
+    apply:"Россотрудничество / шууд",deadline:"3–4-р сар",lang:"Орос хэл C1+ / IELTS 6.0+",
+    website:"https://www.msu.ru",
+    mapLink:"https://maps.google.com/?q=Moscow+State+University",
+    campus:{size:"1,700 га — Москвагийн баруун өмнөд",location:"Воробьевы горы (Шувуудын уул), Москва",founded:"1755 он",students:"45,000+ оюутан",style:"Сталинист готик — аварга том 36 давхар цамхаг",notable:"МГУ-н үндсэн байшин — Москвагийн символ, Москва мөрний эрэгт"},
+    desc:"МГУ нь 1755 онд байгуулагдсан Оросын хамгийн нэр хүндтэй их сургууль. Аварга том Сталинист готик байшин нь Москвагийн хамгийн алдарт дүрс болдог. Воробьевы горы (Шувуудын уул)-аас Москвагийн panorama гайхамшигтай.",
+    facts:["🏛️ Москвагийн хамгийн алдарт байшин — Сталинист готик 36 давхар цамхаг","🇲🇳 Монгол оюутнуудад маш танил — жил бүр олон монгол суралцдаг","🔬 Physics, Mathematics чиглэлд Европт тэргүүлдэг","⚠️ Одоогийн геополитик нөхцлийг сайн тооцоолох хэрэгтэй","❄️ Москвагийн өвөл маш хатуу — -30°C хүрдэг"],
+    alumni:[{name:"Mikhail Gorbachev",desc:"Зөвлөлтийн удирдагч"},{name:"Andrei Sakharov",desc:"Физикч, Нобелийн шагналт"}]
+  },
+  {
+    name:"Waseda University",country:"Япон, Токио",region:"asia",rank:"QS #200-250",
+    tuition:"¥1,500,000–¥2,000,000/жил (~$13,000)",scholarship:"MEXT тэтгэлэг — бүрэн тэтгэлэг",hasSchol:true,hasMongol:true,cs:true,
+    apply:"Васэда шууд / MEXT",deadline:"4–6-р сар (MEXT)",lang:"IELTS 6.0+ (англи хөтөлбөрт)",
+    website:"https://www.waseda.jp",
+    mapLink:"https://maps.google.com/?q=Waseda+University+Tokyo",
+    campus:{size:"Синжюку дүүрэгт — Токиогийн дунд",location:"Синжюку, Токио",founded:"1882 он",students:"50,000+ оюутан",style:"Готик + орчин үеийн хосолмол",notable:"Okuma Garden, Okuma Auditorium (улаан цамхаг), Waseda Campus"},
+    desc:"Васэда нь 1882 онд байгуулагдсан Японы хамгийн нэр хүндтэй их сургуулиудын нэг. Токиогийн Синжюку дүүрэгт байрладаг. MEXT тэтгэлэг Монгол элчин сайдын яамаар авч болно.",
+    facts:["🗼 Токиогийн Синжюку — дэлхийн хамгийн завгүй галт тэрэгний буудал хажуудаа","🍜 Рамэн, суши, матча — Японы хоол өдөр бүр!","🎌 MEXT тэтгэлэг — Монгол элчин сайдын яамаар өргөдлөө өгнө","🎮 Аниме, манга, Akihabara — Токиод бүх зүйл байна","🏯 Японы уламжлал + орчин үеийн технологийн хосолмол"],
+    alumni:[{name:"Yasunari Kawabata",desc:"Нобелийн шагналт зохиолч"},{name:"Shinzo Abe",desc:"Японы ерөнхий сайд"}]
+  },
+  {
+    name:"Kyoto University",country:"Япон, Киото",region:"asia",rank:"QS #46",
+    tuition:"¥535,800/жил (~$3,500)",scholarship:"MEXT тэтгэлэг — бүрэн тэтгэлэг",hasSchol:true,hasMongol:false,cs:true,
+    apply:"MEXT / шууд",deadline:"5–6-р сар (MEXT)",lang:"IELTS 6.0+",
+    website:"https://www.kyoto-u.ac.jp",
+    mapLink:"https://maps.google.com/?q=Kyoto+University+Japan",
+    campus:{size:"Ёшида хилл дагуу — Хигашияма уулын хормойд",location:"Сакё дүүрэг, Киото",founded:"1897 он",students:"22,000+ оюутан",style:"Meiji үеийн западчилсан архитектур",notable:"Clock Tower, Yoshida Campus, Fushimi Inari нь хажуудаа"},
+    desc:"Киотогийн их сургууль нь 1897 онд байгуулагдсан Японы тэргүүний судалгааны их сургуулиудын нэг. Нобелийн шагналтуудын тоогоор Японд тэргүүлдэг. Киото хот 1,200 жилийн Японы нийслэл байсан — 1,600 гаруй сүм дуган.",
+    facts:["🏯 Киото 1,200 жилийн Японы нийслэл байсан — 1,600 гаруй сүм дуган","🍵 Матчагийн жинхэнэ нутаг — Узу дүүрэг хажуудаа","🏆 Японы Нобелийн шагналтуудын 30%+ Киото их сургуулитай холбоотой","🦊 Fushimi Inari — улаан гэрийн мянган хаалга хажуудаа","🌸 Марояма паркийн интоос — Японы хамгийн алдарт газруудын нэг"],
+    alumni:[{name:"Hideki Yukawa",desc:"Японы анхны Нобелийн шагналт"},{name:"Shin'ichirō Tomonaga",desc:"Нобелийн шагналт физикч"}]
+  },
+  {
+    name:"Charles University",country:"Чех, Прага",region:"europe",rank:"QS #201-250",
+    tuition:"€2,000–€5,000/жил",scholarship:"Czech Government Scholarship",hasSchol:true,hasMongol:false,cs:true,
+    apply:"Шууд",deadline:"2–3-р сар",lang:"IELTS 6.0+",
+    website:"https://www.cuni.cz",
+    mapLink:"https://maps.google.com/?q=Charles+University+Prague",
+    campus:{size:"Прага хотод тархсан",location:"Прага хотын дунд",founded:"1348 он",students:"50,000+ оюутан",style:"Gothic, Baroque, орчин үеийн",notable:"Carolinum (хамгийн эртний байшин), Václavské náměstí ойролцоо, Чарльзын гүүр хажуудаа"},
+    desc:"Карлын их сургууль нь 1348 онд байгуулагдсан Төв Европын хамгийн эртний их сургуулиудын нэг. Прага хот 'Европын алтан хот' гэж алдартай. Амьдрах зардал Баруун Европоос 50-60% хямд.",
+    facts:["🏰 Прага — 'Европын алтан хот', 2-р дайнд хэрхэвч эвдрээгүй тул бүтэн хадгалагдсан","💰 Амьдрах зардал Баруун Европоос 50-60% хямд","🍺 Чех пиво — дэлхийд нэрт, Pilsner Urquell энд гаралтай","🎭 Кафка энд амьдарч байсан — утга зохиолын нутаг","🌍 Шенген бүсэд — Европыг чөлөөтэй аялах боломжтой"],
+    alumni:[{name:"Franz Kafka",desc:"Зохиолч (суралцсан)"},{name:"Albert Einstein",desc:"Физикч (багшилсан)"}]
+  },
+  {
+    name:"University of Helsinki",country:"Финланд, Хельсинки",region:"europe",rank:"QS #119",
+    tuition:"€13,000–€18,000/жил",scholarship:"University of Helsinki Scholarship",hasSchol:true,hasMongol:false,cs:true,
+    apply:"Studyinfo.fi",deadline:"1-р сарын 8",lang:"IELTS 6.5+",
+    website:"https://www.helsinki.fi",
+    mapLink:"https://maps.google.com/?q=University+of+Helsinki",
+    campus:{size:"Хельсинкийн дунд — Senate Square дагуу",location:"Сенатын талбай, Хельсинки хотын зүрхэнд",founded:"1640 он",students:"30,000+ оюутан",style:"Неоклассик — Карл Людвиг Энгелийн дизайн",notable:"Main Building (Cathedral харагдах), Senate Square, Uspenskin Cathedral хажуудаа"},
+    desc:"Хельсинкийн их сургуулийн үндсэн байшин нь Хельсинкийн Cathedral болон Сенатын талбайг тойрч байрладаг — дэлхийн хамгийн сайхан кампус дүрслэлүүдийн нэг. Linux-ийн үүсгэгч Linus Torvalds Хельсинкид суралцсан.",
+    facts:["🐧 Linux-ийн зохион бүтээгч Linus Torvalds Хельсинкид суралцсан","🌲 Финланд дэлхийн хамгийн аз жаргалтай улсаар жил бүр нэрлэгддэг","❄️ Цасан биеэр угаах (сауна + цасны дунд гарах) үндэсний уламжлал","🌌 Лапландад Аврора Бореалис — 5 цагт очно","🏛️ Сенатын талбайн Cathedral харагдах кампус — гайхамшигтай"],
+    alumni:[{name:"Linus Torvalds",desc:"Linux үүсгэгч"},{name:"Alvar Aalto",desc:"Архитектор"}]
+  },
+  {
+    name:"Aalto University",country:"Финланд, Эспоо (Хельсинки)",region:"europe",rank:"QS #115",
+    tuition:"€15,000–€18,000/жил",scholarship:"Aalto Scholarship",hasSchol:true,hasMongol:false,cs:true,
+    apply:"Admissions.fi",deadline:"1-р сарын 8",lang:"IELTS 6.5+",
+    website:"https://www.aalto.fi",
+    mapLink:"https://maps.google.com/?q=Aalto+University+Espoo",
+    campus:{size:"Отаниеми — далайн хормойд",location:"Отаниеми, Эспоо (Хельсинкиас 15 мин)",founded:"2010 он (3 их сургуулийн нэгдэл)",students:"17,000+ оюутан",style:"Орчин үеийн болон дизайнер архитектур",notable:"Otakaari Campus — Alvar Aalto дизайн, далайн эрэг, Aalto University Metro станц"},
+    desc:"Аалто нь 2010 онд Technology, Business, Arts гурвыг нэгтгэж байгуулагдсан. Design болон Technology-н хосолмол сургалтаараа дэлхийд өвөрмөц. Slush — дэлхийн хамгийн том стартап тэмцээн жил бүр Аалтод болдог.",
+    facts:["🎨 Design + Technology + Business нэг дор — маш өвөрмөц","📱 Spotify, Rovio (Angry Birds), Supercell (Clash of Clans) Финланд гаралтай","🚀 SLUSH стартап тэмцээн — дэлхийн хамгийн том стартап тэмцээн Аалтод болдог","🌊 Далайн эрэгт кампус — усан дээгүүр kayak хийж болно","😊 Финланд дэлхийн хамгийн аз жаргалтай улс — жил бүр #1"],
+    alumni:[]
+  },
+  {
+    name:"POSTECH",country:"Солонгос, Похан",region:"asia",rank:"QS #81",
+    tuition:"₩7,000,000/жил (~$5,000)",scholarship:"POSTECH бүрэн тэтгэлэг (ихэнхдээ)",hasSchol:true,hasMongol:false,cs:true,
+    apply:"POSTECH шууд",deadline:"9-р сарын 30",lang:"IELTS 6.0+",
+    website:"https://www.postech.ac.kr",
+    mapLink:"https://maps.google.com/?q=POSTECH+Pohang+Korea",
+    campus:{size:"400 га — Похан хотын захад, далайн ойролцоо",location:"Намгу, Похан хот, Солонгос",founded:"1986 он",students:"3,500+ оюутан — маш жижиг ч хүчтэй",style:"Орчин үеийн судалгааны кампус",notable:"POSCO Steel Museum, Pohang Steel Campus, Yeongilman Gulf харагдах"},
+    desc:"POSTECH нь POSCO гангийн корпорацийн дэмжлэгтэй судалгааны их сургууль. Жижигхэн ч маш хүчтэй — оюутан тус бүрт 1 профессор ногдоно. Похан хот Сеулаас 3 цаг, далайн эрэгт.",
+    facts:["🔬 Оюутан-профессорын харьцаа дэлхийд хамгийн өндөрт байдаг","💰 POSCO корпорацийн дэмжлэгтэй тул тэтгэлэг маш элбэг","🌊 Далайн эрэгт — Yeongilman буланд","⚙️ Materials Science, Engineering-т дэлхийд тэргүүнд","🏖️ Похан хот тайван, аюулгүй — суралцахад тохиромжтой орчин"],
+    alumni:[]
+  },
+  {
+    name:"Nanyang Technological University (NTU)",country:"Сингапур",region:"asia",rank:"QS #15",
+    tuition:"SGD $18,000–$30,000/жил",scholarship:"Nanyang Scholarship, ASEAN Scholarship",hasSchol:true,hasMongol:false,cs:true,
+    apply:"NTU шууд",deadline:"2-р сарын 20",lang:"IELTS 6.0+",
+    website:"https://www.ntu.edu.sg",
+    mapLink:"https://maps.google.com/?q=Nanyang+Technological+University+Singapore",
+    campus:{size:"200 га — Сингапурын баруун хэсэгт",location:"Журонг Вест, Сингапур",founded:"1981 он",students:"33,000+ оюутан",style:"Орчин үеийн + ногоон архитектур",notable:"The Hive (торхой хэлбэрийн байшин), ногоон дээвэртэй бүх байшин — Instagram-д маш алдартай"},
+    desc:"NTU нь 'Дэлхийн хамгийн сайхан кампус'-уудын нэгд тооцогддог — ногоон дээвэртэй, ойн дунд байрлах архитектур. Engineering, Business, CS чиглэлд Азид тэргүүлдэг.",
+    facts:["🌿 'Дэлхийн хамгийн сайхан кампус'-уудын нэг — ногоон дээвэртэй байшингууд","🔬 Графений судалгаанд дэлхийд тэргүүнд","✈️ Чанги нисэх буудал — дэлхийн хамгийн шагналт нисэх буудал 30 мин","🏙️ Сингапур — аюулгүй, цэвэрхэн, зохион байгуулалттай хот","🌏 Азийн санхүүгийн нийслэлд суралцана"],
+    alumni:[]
+  },
+  {
+    name:"Indian Institute of Technology Bombay",country:"Энэтхэг, Мумбай",region:"asia",rank:"QS #118",
+    tuition:"₹200,000–₹300,000/жил (~$2,400)",scholarship:"ICCR Scholarship (гадаадын оюутнуудад)",hasSchol:true,hasMongol:false,cs:true,
+    apply:"Шууд (гадаадын оюутнуудад)",deadline:"3–4-р сар",lang:"IELTS 6.0+",
+    website:"https://www.iitb.ac.in",
+    mapLink:"https://maps.google.com/?q=IIT+Bombay+Mumbai",
+    campus:{size:"550 акр — Powai нуурын эрэгт",location:"Повай, Мумбай",founded:"1958 он",students:"10,000+ оюутан",style:"Орчин үеийн Indian архитектур",notable:"Lake Side (нуурын эрэг), Main Building, Powai Lake — кампустай зэрэгцэн"},
+    desc:"IIT Bombay нь Энэтхэгийн хамгийн нэр хүндтэй технологийн их сургуулиудын нэг. Powai нуурын эрэгт байрлах кампус маш сайхан. Сургалтын төлбөр маш хямд. Silicon Valley-н Энэтхэг гаралтай CEO нарын олонх нь IIT-д суралцсан.",
+    facts:["💻 Google, Microsoft, Adobe-н CEO нар IIT-д суралцсан","💰 Жилд ердөө ~$2,400 — маш хямд","🌊 Powai нуурын эрэгт — гайхамшигтай кампус","🎬 Bollywood-н нийслэл Мумбайд суралцана","🚀 Энэтхэгийн хүн сарны нисэх хөлгийн инженерүүд IIT-аас"],
+    alumni:[{name:"Sundar Pichai",desc:"Google CEO"},{name:"N. R. Narayana Murthy",desc:"Infosys үүсгэгч"}]
+  },
+  {
+    name:"University of Auckland",country:"Шинэ Зеланд, Окленд",region:"asia",rank:"QS #68",
+    tuition:"NZD $37,000–$44,000/жил",scholarship:"International Excellence Award",hasSchol:true,hasMongol:false,cs:true,
+    apply:"Шууд",deadline:"10-р сар",lang:"IELTS 6.5+",
+    website:"https://www.auckland.ac.nz",
+    mapLink:"https://maps.google.com/?q=University+of+Auckland",
+    campus:{size:"Окленд хотын дунд",location:"Окленд хотын дунд",founded:"1883 он",students:"41,000+ оюутан",style:"Gothic Revival болон орчин үеийн",notable:"ClockTower Building, Albert Park хажуудаа, Окленд Sky Tower харагдах"},
+    desc:"Шинэ Зеландын тэргүүний их сургууль. Окленд хот 2 далайн хоорондох, галт уулын дунд байрладаг — байгаль гайхамшигтай. Lord of the Rings, Avatar Шинэ Зеландад буулгасан.",
+    facts:["🧙 Lord of the Rings, Avatar: The Way of Water Шинэ Зеландад буулгасан","🌋 Оклендын хотын дунд унтарсан галт уул байдаг!","🏉 All Blacks — дэлхийн шилдэг регби баг","🌿 Байгаль орчинд хамгийн ногоон улсуудын нэг","✈️ Аюулгүй, тайван орчин — Шинэ Зеланд"],
+    alumni:[{name:"Edmund Hillary",desc:"Эверестийн анхны байлдагч (Шинэ Зеландаас)"}]
+  },
+  {
+    name:"Maastricht University",country:"Нидерланд, Маастрихт",region:"europe",rank:"QS #286",
+    tuition:"€9,900/жил",scholarship:"High Potential Scholarship",hasSchol:true,hasMongol:false,cs:true,
+    apply:"Шууд",deadline:"4-р сарын 1",lang:"IELTS 6.5+",
+    website:"https://www.maastrichtuniversity.nl",
+    mapLink:"https://maps.google.com/?q=Maastricht+University",
+    campus:{size:"Маастрихт хотод тархсан",location:"Маастрихт хот — Нидерланд, Бельги, Германы хилийн уулзвар",founded:"1976 он",students:"22,000+ оюутан",style:"Хуучин эмнэлэг, хийд байшинг дахин ашигласан",notable:"Minderbroedersberg (эртний хийд), Tapijn Kaserne, хотын гудамжаар тархсан"},
+    desc:"Маастрихтийн их сургааль нь PBL сургалтаараа дэлхийд алдартай. 3 улсын хилийн уулзварт — нэг өдөрт Нидерланд, Бельги, Германд очиж болно. Европын холбооны Маастрихт гэрээг энд гарын үсэг зурсан.",
+    facts:["🇪🇺 Европын холбооны Маастрихт гэрээ 1992 онд энд гарын үсэг зурагдсан","🌍 3 улсын хил дээр — 1 өдөрт 3 улсад очно","📚 PBL — ном цээжлэхийн оронд бодит асуудал шийдвэрлэдэг арга зүй","🍺 Бельгийн шар айраг хажуудаа — Льеж хотоос 30 мин","🎓 Нидерландын хамгийн олон улсын оюутантай их сургуулиудын нэг"],
+    alumni:[]
+  }
 ];
 
 let activeFilter = 'all';
@@ -281,11 +725,12 @@ function render() {
   const empty = document.getElementById('empty');
   const countEl = document.getElementById('result-count');
   const statEl = document.getElementById('stat-total');
-
   grid.innerHTML = '';
   let count = 0;
 
-  unis.forEach((u, i) => {
+  unis.forEach(u => {
+    // skip duplicates/placeholders
+    if (!u.facts || u.facts.length === 0) return;
     const matchF =
       activeFilter === 'all' ||
       (activeFilter === 'europe' && u.region === 'europe') ||
@@ -295,18 +740,16 @@ function render() {
       (activeFilter === 'scholarship' && u.hasSchol) ||
       (activeFilter === 'cs' && u.cs);
     const matchQ = !q || u.name.toLowerCase().includes(q) || u.country.toLowerCase().includes(q);
-
     if (!matchF || !matchQ) return;
     count++;
-
     const card = document.createElement('div');
     card.className = 'card';
     card.innerHTML = `
       <div class="card-head">
         <div class="card-top">
           <div>
-            <div class="card-name">${u.name} <span class="chevron">▾</span></div>
-            <div class="card-country">${u.country}</div>
+            <div class="card-name">${u.name}</div>
+            <div class="card-country">📍 ${u.country}</div>
           </div>
           <span class="rank-pill">${u.rank}</span>
         </div>
@@ -316,18 +759,12 @@ function render() {
           ${u.hasMongol ? '<span class="tag tag-mongol">Монгол оюутан</span>' : ''}
         </div>
       </div>
-      <div class="card-body">
-        <div class="card-body-inner">
-          <div class="detail"><span class="detail-lbl">Сургалтын төлбөр</span><span class="detail-val">${u.tuition}</span></div>
-          <div class="detail"><span class="detail-lbl">Тэтгэлэг</span><span class="detail-val">${u.scholarship}</span></div>
-          <div class="detail"><span class="detail-lbl">Хэл шалгалт</span><span class="detail-val">${u.lang}</span></div>
-          <div class="detail"><span class="detail-lbl">Элсэлтийн хугацаа</span><span class="detail-val">${u.deadline}</span></div>
-          <div class="detail"><span class="detail-lbl">Өргөдлийн систем</span><span class="detail-val">${u.apply}</span></div>
-          <div class="note-box">${u.notes}</div>
-        </div>
+      <div class="card-footer">
+        <span class="card-tuition">${u.tuition}</span>
+        <span class="card-btn">Дэлгэрэнгүй →</span>
       </div>
     `;
-    card.querySelector('.card-head').addEventListener('click', () => card.classList.toggle('open'));
+    card.addEventListener('click', () => showDetail(u));
     grid.appendChild(card);
   });
 
@@ -335,6 +772,62 @@ function render() {
   statEl.textContent = count;
   empty.style.display = count === 0 ? 'block' : 'none';
   grid.style.display = count === 0 ? 'none' : 'grid';
+}
+
+function showDetail(u) {
+  document.getElementById('list-view').style.display = 'none';
+  document.getElementById('detail-view').style.display = 'block';
+  window.scrollTo(0, 0);
+
+  document.getElementById('d-rank').textContent = u.rank;
+  document.getElementById('d-name').textContent = u.name;
+  document.getElementById('d-country').textContent = '📍 ' + u.country;
+  document.getElementById('d-link').href = u.website;
+  document.getElementById('d-map').href = u.mapLink;
+
+  document.getElementById('d-tags').innerHTML = `
+    ${u.cs ? '<span class="tag tag-cs">CS хөтөлбөр</span>' : ''}
+    ${u.hasSchol ? '<span class="tag tag-schol">Тэтгэлэгтэй</span>' : ''}
+    ${u.hasMongol ? '<span class="tag tag-mongol">Монгол оюутан</span>' : ''}
+  `;
+
+  document.getElementById('d-info').innerHTML = `
+    <div class="info-card"><div class="info-card-lbl">Сургалтын төлбөр</div><div class="info-card-val">${u.tuition}</div></div>
+    <div class="info-card"><div class="info-card-lbl">Тэтгэлэг</div><div class="info-card-val">${u.scholarship}</div></div>
+    <div class="info-card"><div class="info-card-lbl">Хэл шалгалт</div><div class="info-card-val">${u.lang}</div></div>
+    <div class="info-card"><div class="info-card-lbl">Элсэлтийн хугацаа</div><div class="info-card-val">${u.deadline}</div></div>
+    <div class="info-card"><div class="info-card-lbl">Өргөдлийн систем</div><div class="info-card-val">${u.apply}</div></div>
+    <div class="info-card"><div class="info-card-lbl">Байгуулагдсан он</div><div class="info-card-val">${u.campus.founded}</div></div>
+  `;
+
+  document.getElementById('d-campus').innerHTML = `
+    <div class="campus-item"><div class="campus-item-lbl">Байршил</div><div class="campus-item-val">${u.campus.location}</div></div>
+    <div class="campus-item"><div class="campus-item-lbl">Хэмжээ</div><div class="campus-item-val">${u.campus.size}</div></div>
+    <div class="campus-item"><div class="campus-item-lbl">Оюутны тоо</div><div class="campus-item-val">${u.campus.students}</div></div>
+    <div class="campus-item"><div class="campus-item-lbl">Архитектур</div><div class="campus-item-val">${u.campus.style}</div></div>
+    <div class="campus-item" style="grid-column:1/-1"><div class="campus-item-lbl">Онцлох газрууд</div><div class="campus-item-val">${u.campus.notable}</div></div>
+  `;
+
+  document.getElementById('d-desc').textContent = u.desc;
+
+  document.getElementById('d-facts').innerHTML = u.facts.map(f =>
+    `<div class="fun-fact"><div class="fun-fact-text">${f}</div></div>`
+  ).join('');
+
+  const alumniEl = document.getElementById('d-alumni');
+  if (u.alumni && u.alumni.length > 0) {
+    alumniEl.innerHTML = u.alumni.map(a =>
+      `<div class="alumni-card"><div class="alumni-name">${a.name}</div><div class="alumni-desc">${a.desc}</div></div>`
+    ).join('');
+  } else {
+    alumniEl.innerHTML = '<p style="font-size:0.85rem;color:var(--text-3)">Мэдээлэл нэмэгдэх болно.</p>';
+  }
+}
+
+function showList() {
+  document.getElementById('list-view').style.display = 'block';
+  document.getElementById('detail-view').style.display = 'none';
+  window.scrollTo(0, 0);
 }
 
 render();
